@@ -1,0 +1,187 @@
+.contact-manager {
+    transition: .3s 0s;
+
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+
+    &__container {
+        margin: 0 auto;
+        max-width: 1308px;
+        width: 100%;
+
+        display: flex;
+
+        border-left: 1px solid;
+        border-right: 1px solid;
+    }
+
+    &__item {
+        font-family: Gilroy, sans-serif;
+        flex: 1 0 33.33%;
+
+        display: flex;
+        align-items: center;
+
+        &-body {
+            width: 100%;
+            padding: 0 40px;
+        }
+
+        &-title {
+            font-weight: bold;
+            font-size: 32px;
+            line-height: 40px;
+        }
+
+        &-text {
+            font-size: 16px;
+            line-height: 22px;
+
+            margin-bottom: 28px;
+        }
+
+        &-submit {
+            width: 200px;
+            height: 48px;
+        }
+
+        &-input {
+            height: 48px;
+
+            & + & {
+                margin-top: 24px;
+            }
+        }
+
+        &-textarea {
+            margin-bottom: 24px;
+            height: 130px;
+        }
+
+        & + & {
+            border-left: 1px solid;
+        }
+    }
+}
+
+@include dark {
+    .contact-manager {
+        color: $white;
+        border-color: rgba(255, 255, 255, 0.1);
+
+        &__item,
+        &__container {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+    }
+}
+@include white {
+    .contact-manager {
+        color: $black;
+        border-color: rgba(255, 255, 255, 0.1);
+
+        &__item,
+        &__container {
+            border-color: rgba(0, 0, 0, 0.16);
+        }
+    }
+}
+
+// 1200
+@include media-breakpoint-down(lg) {
+    .contact-manager {
+
+    }
+}
+
+// 992
+@include media-breakpoint-down(md) {
+    .contact-manager {
+
+        &__container {
+            width: auto;
+            margin: 64px 15px 0;
+
+            flex-direction: column;
+        }
+
+        &__item {
+            border: none;
+
+            &-body {
+                padding: 0 15px;
+            }
+
+            &-title {
+                font-size: 30px;
+                line-height: 38px;
+
+                margin-bottom: 16px;
+            }
+
+            &-input + &-input {
+                margin: 16px 0;
+            }
+
+            &-text {
+                margin-bottom: 16px;
+            }
+
+            &-map {
+                width: 100%;
+                height: 450px;
+
+                object-fit: cover;
+                margin: 40px 0 24px;
+            }
+        }
+    }
+}
+
+// 768
+@include media-breakpoint-down(sm) {
+    .contact-manager {
+
+        &__container {
+            margin: 64px 10px 0;
+        }
+
+        &__item {
+
+            &-body {
+                padding: 0 12px;
+            }
+
+            &-title {
+                font-size: 28px;
+                line-height: 34px;
+            }
+
+            &-map {
+                height: 350px;
+            }
+        }
+    }
+}
+
+// 576
+@media screen and (max-width: 576px) {
+    .contact-manager {
+
+        &__item {
+
+            &-body {
+                padding: 0 8px;
+            }
+
+            &-title {
+                font-size: 26px;
+                line-height: 32px;
+            }
+
+            &-map {
+                height: 300px;
+            }
+        }
+    }
+}

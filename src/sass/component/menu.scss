@@ -1,0 +1,227 @@
+.header__nav {
+    display: flex;
+    height: 100%;
+
+    margin-left: 6px;
+
+    .menu-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        margin: 0 16px;
+        transition: .3s 0s;
+
+        border-bottom: 4px solid transparent;
+
+        .menu-item {
+            border-bottom: none;
+            position: relative;
+
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 15px;
+
+            transition: .3s 0s;
+            margin: 0;
+            padding: 8px 17px 8px 12px;
+
+            & > .sub-menu {
+                position: absolute;
+                left: 100%;
+                top: -40px;
+
+                opacity: 0;
+                transition: .3s 0s;
+                visibility: hidden;
+
+                padding: 8px 0;
+                border-radius: 10px;
+            }
+
+            &.menu-item-has-children > a {
+
+                &::after {
+                    transform: rotate(-90deg);
+                }
+            }
+
+            &:hover {
+
+                & > a {
+                    color: $orange1 !important;
+                }
+
+                & > .sub-menu {
+                    top: -15px;
+                    opacity: 1;
+
+                    visibility: visible;
+                }
+            }
+        }
+
+        &:hover {
+            & > a {
+                color: $orange1 !important;
+            }
+
+            & > .sub-menu {
+                top: 88px;
+                opacity: 1;
+
+                visibility: visible;
+            }
+
+            border-color: $orange1;
+        }
+
+        & > .sub-menu {
+            position: absolute;
+            top: 50px;
+            opacity: 0;
+            visibility: hidden;
+            min-width: 100%;
+
+            transition: .3s 0s;
+
+            padding: 8px 0;
+
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        &.menu-item-has-children > a {
+            display: flex;
+            align-items: center;
+
+            &::after {
+                content: '';
+                margin-left: 4px;
+
+                width: 10px;
+                height: 6px;
+
+                border: 0 solid transparent;
+            }
+        }
+    }
+
+    a {
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 15px;
+        white-space: nowrap;
+
+        transition: .3s 0s;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+@include dark {
+    .header__nav {
+
+        .menu-item {
+
+            .menu-item {
+
+                &:hover {
+                    background: $blue2;
+                }
+            }
+
+            &.menu-item-has-children > a {
+
+                &::after {
+                    background: url(../assets/img/icon/arr-b.svg);
+                }
+            }
+        }
+
+        .sub-menu {
+            background: $dark1;
+        }
+
+        a {
+            color: $white;
+        }
+    }
+}
+
+@include white {
+    .header__nav {
+
+        .menu-item {
+
+            .menu-item {
+
+                &:hover {
+                    background: $white2;
+                }
+            }
+
+            &.menu-item-has-children a {
+
+                &::after {
+                    background: url(../assets/img/icon/arr-bblack.svg);
+                }
+            }
+        }
+
+        .sub-menu {
+            background: $white1;
+        }
+
+        a {
+            color: $black;
+        }
+    }
+}
+
+// 1200
+@include media-breakpoint-down(xl) {
+    .header__nav {
+        margin-left: 4px;
+
+        .menu-item {
+            margin: 0 12px;
+
+            &:hover {
+                & > .sub-menu {
+                    top: 80px;
+                }
+            }
+        }
+    }
+}
+
+// 1090
+@media screen and (max-width: 1130px) {
+    .header__nav {
+        display: none;
+    }
+}
+
+// 992
+@include media-breakpoint-down(lg) {
+    .header__nav {
+
+    }
+}
+
+// 768
+@include media-breakpoint-down(md) {
+    .header__nav {
+
+    }
+}
+
+// 576
+@include media-breakpoint-down(sm) {
+    .header__nav {
+
+    }
+}

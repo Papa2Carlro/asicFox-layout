@@ -1,0 +1,88 @@
+.rate {
+    $parent: &;
+    display: flex;
+    align-items: center;
+
+    &__body {
+        display: flex;
+    }
+
+    &__star {
+        width: 24px;
+        height: 24px;
+
+        background: url(/assets/img/super/star.svg) no-repeat;
+
+        &.active {
+            background: url(/assets/img/super/activestar.svg) no-repeat;
+        }
+    }
+
+    &__comment {
+        position: relative;
+        font-family: Gilroy, sans-serif;
+
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 15px;
+
+        color: $orange1;
+
+        margin-left: 6px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 20px;
+        height: 15px;
+
+        border-radius: 3px;
+        border-bottom-left-radius: 0;
+
+        background: linear-gradient(135deg, rgba(#FF4E16, .3) 0%, rgba(#FF5A13, .3) 45.83%, rgba(#FFB90F, .3) 100%);
+
+        &:after {
+            content: '';
+            display: block;
+
+            position: absolute;
+
+            left: 0;
+            top: 100%;
+
+            border-left: 4px solid rgba(#FF4E16, .3);
+            border-top: 3px solid rgba(#FF4E16, .3);
+            border-right: 4px solid transparent;
+            border-bottom: 3px solid transparent;
+        }
+    }
+
+    &__star + &__star {
+        margin-left: 3px;
+    }
+
+    &--empty {
+
+        #{$parent} {
+
+            &__star {
+                background: url(/assets/img/super/empty.svg) no-repeat;
+
+                &.active {
+                    background: url(/assets/img/super/activestar.svg) no-repeat;
+                }
+            }
+
+            &__comment {
+                color: $white;
+                background: $dark3;
+
+                &:after {
+                    border-left: 4px solid $dark3;
+                    border-top: 3px solid $dark3;
+                }
+            }
+        }
+    }
+}

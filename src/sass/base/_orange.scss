@@ -1,0 +1,131 @@
+.orange {
+    position: relative;
+
+    font-family: Gilroy, sans-serif;
+    background: linear-gradient(135deg, #FF4E16 0%, #FF5A13 20%, #FFB90F 100%);
+
+    &__container {
+        position: relative;
+        z-index: 2;
+
+        width: 100%;
+        margin: 0 auto;
+        max-width: 1308px;
+
+        border-left: 1px solid rgba(255, 255, 255, 0.3);
+        border-right: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    &__title {
+        font-weight: bold;
+        font-size: 52px;
+        line-height: 64px;
+
+        color: #FFFFFF;
+        margin-bottom: 8px;
+    }
+
+    &__text {
+        font-family: Gilroy, sans-serif;
+
+        font-size: 16px;
+        line-height: 22px;
+        margin-bottom: 40px;
+
+        max-width: 60%;
+    }
+
+    &__input {
+        margin-top: 40px;
+        width: 100%;
+        height: 48px;
+
+        display: flex;
+        align-items: center;
+
+        &-body {
+            box-sizing: border-box;
+
+            width: calc(100% - 16px);
+            height: 100%;
+
+            padding-left: 16px;
+            border-right: none;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            background: transparent;
+            outline: none;
+
+            font-family: Gilroy, sans-serif;
+            font-size: 16px;
+            line-height: 22px;
+            color: rgba(255, 255, 255, .9);
+
+            &::placeholder {
+                color: rgba(255, 255, 255, .8);
+            }
+        }
+
+        &-btn {
+            flex: 0 0 115px;
+            height: 100%;
+        }
+    }
+
+    &::before {
+        content: '';
+        display: block;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        width: 318px;
+        height: 414px;
+
+        background: url(/assets/img/orange/tr.png) 100% 100% no-repeat;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        width: 169px;
+        height: 221px;
+
+        background: url(/assets/img/orange/lb.png) 100% 100% no-repeat;
+    }
+}
+
+// 992
+@include media-breakpoint-down(md) {
+    .orange {
+        &__input {
+            margin-top: 18px;
+        }
+
+        &__container {
+            width: auto;
+            margin: 0 15px;
+
+            flex-direction: column;
+        }
+    }
+}
+
+// 768
+@include media-breakpoint-down(sm) {
+    .orange {
+
+        &__text {
+            max-width: 100%;
+        }
+
+        &__container {
+            margin: 0 10px;
+        }
+    }
+}

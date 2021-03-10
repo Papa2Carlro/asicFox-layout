@@ -1,0 +1,146 @@
+.service-notes {
+    transition: .3s 0s;
+
+    &__container {
+        display: flex;
+
+        margin: 0 auto;
+        max-width: 1308px;
+        width: 100%;
+
+        border-left: 1px solid;
+        border-right: 1px solid;
+    }
+
+    &__item {
+        flex: 1 0 50%;
+        padding: 64px 40px;
+
+        &-title {
+            font-family: Montserrat, sans-serif;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 24px;
+
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+            &:after {
+                content: '';
+                display: block;
+
+                width: 24px;
+                height: 4px;
+                background: $orange1;
+
+                margin: 10px 0;
+            }
+        }
+
+        &-text {
+            font-family: Gilroy, sans-serif;
+
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        & + & {
+            border-left: 1px solid;
+        }
+    }
+}
+
+@include dark {
+    .service-notes {
+        color: $white;
+        background: $dark1;
+
+        &__item,
+        &__container {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+    }
+}
+
+@include white {
+    .service-notes {
+        color: $black;
+        background: $white1;
+
+        &__item,
+        &__container {
+            border-color: rgba(0, 0, 0, 0.16);
+        }
+    }
+}
+
+// 1200
+@include media-breakpoint-down(lg) {
+    .service-notes {
+
+        &__item {
+            padding: 55px 30px;
+        }
+    }
+}
+
+// 992
+@include media-breakpoint-down(md) {
+    .service-notes {
+
+        &__container {
+            flex-direction: column;
+
+            margin: 0 15px;
+            width: auto;
+        }
+
+        &__item {
+
+            &-title {
+                font-size: 16px;
+                line-height: 22px;
+            }
+
+            & + & {
+                border-left: none;
+                border-top: 1px solid;
+            }
+
+            &:first-child {
+                padding: 60px 15px 24px;
+            }
+
+            &:last-child {
+                padding: 24px 15px 60px;
+            }
+        }
+    }
+}
+
+// 768
+@include media-breakpoint-down(sm) {
+    .service-notes {
+
+        &__container {
+            margin: 0 10px;
+
+            &__item {
+
+                &:first-child {
+                    padding: 60px 10px 24px;
+                }
+
+                &:last-child {
+                    padding: 24px 10px 60px;
+                }
+            }
+        }
+    }
+}
+
+// 576
+@media screen and (max-width: 576px) {
+    .service-notes {
+
+    }
+}

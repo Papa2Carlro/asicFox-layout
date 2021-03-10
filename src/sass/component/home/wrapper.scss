@@ -1,0 +1,18 @@
+.wrapper {
+    transition: .3s 0s;
+
+    display: flex;
+    flex-direction: column;
+}
+
+@include dark {
+    .wrapper {
+        background: $blue3;
+    }
+}
+
+@include white {
+    .wrapper {
+        background: $white;
+    }
+}

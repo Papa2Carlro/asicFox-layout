@@ -1,0 +1,118 @@
+{% set title = 'Checkout' %}
+{% extends 'includes/_base.njk' %}
+{% import './includes/_macro.njk' as macro %}
+
+{% set breadcrumbs = [
+    {
+        label: 'Главная'
+    },
+    {
+        label: 'Корзина'
+    },
+    {
+        label: 'Оформление заказа'
+    }
+] %}
+
+{% block content %}
+    {% include '../src/includes/_loader.njk' %}
+
+    <div class="checkout">
+        <div class="checkout__form">
+            {{ macro.breadcrumbs(breadcrumbs) }}
+
+            <div class="checkout__form-title">Оформление заказа</div>
+
+            <form class="checkout__form-body">
+                <div class="checkout__form-group">
+                    <label for="shipping" class="checkout__form-label">Способ доставки:</label>
+
+                    <select class="input input--h48" id="shipping" name="select">
+                        <option value="pickup" selected>Самовывоз</option>
+                        <option value="value2">Значение 2</option>
+                        <option value="value3">Значение 3</option>
+                    </select>
+                </div>
+
+                <div class="checkout__form-group">
+                    <label for="name" class="checkout__form-label">Иноформация о получателе:</label>
+
+                    <input id="name" type="text" placeholder="Имя" class="input input--h48">
+
+                    <input id="phone" type="text" placeholder="+38(_)-___-__-__" class="input input--h48">
+
+                    <input id="email" type="text" placeholder="Email" class="input input--h48">
+                </div>
+
+                <div class="checkout__form-group">
+                    <label for="comment" class="checkout__form-label">Комментарий <b>(не обязательно)</b>:</label>
+
+                    <textarea id="comment" type="text"
+                              placeholder="Примечание к вашему заказу. Например, особые пожелания к заказу"
+                              class="input input--textarea"></textarea>
+                </div>
+
+                <div class="checkout__form-total">
+                    Итого: <span>$3800</span>
+                </div>
+
+                <div class="checkout__form-btn btn--gradient">
+                    Подтвердить заказ
+                </div>
+            </form>
+        </div>
+
+        <div class="checkout__products">
+            <ul class="checkout__products-list">
+                <li class="checkout__products-item">
+                    <div class="checkout__products-info">
+                        <img src="/assets/img/product/img1.png" alt="" class="checkout__products-thumb">
+
+                        <div class="checkout__products-name">
+                            ASIC Antminer T17 42Th/s БУ - Китай
+                        </div>
+                    </div>
+
+                    <div class="checkout__products-right">
+                        <p>Количество: 1</p>
+                        <p>$ 1 900</p>
+                    </div>
+                </li>
+
+                <li class="checkout__products-item">
+                    <div class="checkout__products-info">
+                        <img src="/assets/img/product/img1.png" alt="" class="checkout__products-thumb">
+
+                        <div class="checkout__products-name">
+                            ASIC Antminer T17 42Th/s БУ - Китай
+                        </div>
+                    </div>
+
+                    <div class="checkout__products-right">
+                        <p>Количество: 1</p>
+                        <p>$ 1 900</p>
+                    </div>
+                </li>
+
+                <li class="checkout__products-item">
+                    <div class="checkout__products-info">
+                        <img src="/assets/img/product/img1.png" alt="" class="checkout__products-thumb">
+
+                        <div class="checkout__products-name">
+                            ASIC Antminer T17 42Th/s БУ - Китай
+                        </div>
+                    </div>
+
+                    <div class="checkout__products-right">
+                        <p>Количество: 1</p>
+                        <p>$ 1 900</p>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="checkout__products-pay">
+                К оплате: <b>$3800</b>
+            </div>
+        </div>
+    </div>
+{% endblock %}

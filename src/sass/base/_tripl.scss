@@ -1,0 +1,342 @@
+.tripl {
+    $parent: &;
+
+    &__list {
+
+        &-item {
+            display: flex;
+            align-items: flex-start;
+
+            & + & {
+                margin-top: 8px;
+            }
+        }
+
+        &-text {
+            font-family: Gilroy, sans-serif;
+            margin-left: 16px;
+
+            font-size: 16px;
+            line-height: 22px;
+
+            b {
+                font-weight: bold;
+            }
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        flex: 1 0 33.33%;
+
+        padding-left: 40px;
+        padding-right: 40px;
+
+        &-title {
+            font-family: Gilroy, sans-serif;
+
+            font-weight: bold;
+            font-size: 32px;
+            line-height: 40px;
+
+            text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+            margin-bottom: 24px;
+        }
+
+        &-more {
+            font-family: Gilroy, sans-serif;
+
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 22px;
+
+            color: $orange1;
+
+            &:after {
+                content: '';
+                display: block;
+
+                width: 32px;
+                height: 2px;
+
+                margin-top: 2px;
+                background: $orange1;
+            }
+        }
+
+        &-text {
+            font-family: Gilroy, sans-serif;
+            font-size: 16px;
+            line-height: 22px;
+
+            b {
+                font-weight: bold;
+            }
+        }
+
+        &--center {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        &--py30 {
+            padding: 30px 0;
+        }
+
+        &--p0 {
+            padding: 0;
+        }
+
+        & > img {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        & + & {
+            border-left: 1px solid;
+        }
+    }
+
+    &__container {
+        display: flex;
+
+        width: 100%;
+        margin: 0 auto;
+        max-width: 1308px;
+
+        border-left: 1px solid;
+        border-right: 1px solid;
+    }
+
+    &--blue {
+        display: flex;
+
+        width: 100%;
+        margin: 0 auto;
+        max-width: 1308px;
+
+        border-left: 1px solid;
+        border-right: 1px solid;
+
+        #{$parent} {
+
+
+        }
+    }
+
+    &--dark {
+        transition: .3s 0s;
+
+        #{$parent} {
+
+
+        }
+    }
+
+    &--orange {
+        overflow: hidden;
+
+        #{$parent} {
+
+            &__body {
+                position: relative;
+                z-index: 1;
+            }
+
+            &__item {
+
+                &-title {
+                    color: #FFFFFF;
+                    text-shadow: none;
+
+                    margin-bottom: 32px;
+                }
+
+                &-text {
+                    color: #FFFFFF;
+                }
+            }
+        }
+    }
+}
+
+@include dark {
+    .tripl {
+        $parent: &;
+
+        color: $white;
+        border-color: rgba(255, 255, 255, 0.1);
+
+        &__item {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        &__container {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        &--dark {
+            background: $dark1;
+        }
+    }
+}
+
+@include white {
+    .tripl {
+        $parent: &;
+        color: $black;
+        border-color: rgba(0, 0, 0, 0.16);
+
+        &__item {
+            border-color: rgba(0, 0, 0, 0.16);
+        }
+
+        &__container {
+            border-color: rgba(0, 0, 0, 0.16);
+        }
+
+        &--dark {
+            background: $white1;
+        }
+    }
+}
+
+// 1200
+@include media-breakpoint-down(lg) {
+    .tripl {
+        $parent: &;
+
+        &__item {
+            padding-left: 30px;
+            padding-right: 30px;
+
+            &-title {
+                font-size: 30px;
+                line-height: 38px;
+
+                margin-bottom: 22px;
+            }
+
+            &--py30 {
+                padding: 25px 0;
+            }
+        }
+    }
+}
+
+// 992
+@include media-breakpoint-down(md) {
+    .tripl {
+        $parent: &;
+
+        &__list {
+
+            &-text {
+                margin-left: 12px;
+            }
+        }
+
+        &__item {
+            padding-left: 25px;
+            padding-right: 25px;
+
+            &-title {
+                font-size: 28px;
+                line-height: 34px;
+
+                margin-bottom: 16px;
+            }
+
+            &--py30 {
+                padding: 20px 0;
+            }
+
+            &--center {
+                padding: 25px 15px;
+            }
+
+            & > img {
+                width: 320px;
+            }
+
+            & + & {
+                border-top: 1px solid;
+                border-left: none;
+            }
+        }
+
+        &__container,
+        &--blue {
+            flex-direction: column;
+
+            width: auto;
+            margin: 0 15px;
+        }
+
+        &--orange {
+            padding-top: 56px !important;
+            padding-bottom: 56px !important;
+
+            #{$parent} {
+
+                &-title {
+                    margin-bottom: 56px;
+                }
+            }
+        }
+    }
+}
+
+// 768
+@include media-breakpoint-down(sm) {
+    .tripl {
+        $parent: &;
+
+        &__list {
+
+            &-text {
+                margin-left: 8px;
+            }
+        }
+
+        &__item {
+            padding-left: 20px;
+            padding-right: 20px;
+
+            &-title {
+                font-size: 26px;
+                line-height: 30px;
+
+                margin-bottom: 12px;
+            }
+
+            &--py30 {
+                padding: 15px 0;
+            }
+
+            &--center {
+                padding: 20px 10px;
+            }
+
+            & + & {
+                border-top: 1px solid;
+                border-left: none;
+            }
+        }
+
+        &__container,
+        &--blue {
+            margin: 0 10px;
+        }
+    }
+}
+
+// 576
+@media screen and (max-width: 576px) {
+    .tripl {
+
+    }
+}

@@ -1,0 +1,10 @@
+{% set title = 'New Asic' %}
+{% extends 'includes/_base.njk' %}
+
+{% block content %}
+    {% include '../src/includes/_loader.njk' %}
+
+    {% include '../src/components/new-asic/home.njk' %}
+    {% include '../src/components/products.njk' %}
+    {% include '../src/components/new-asic/info.njk' %}
+{% endblock %}

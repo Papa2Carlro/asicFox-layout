@@ -1,0 +1,225 @@
+.catalog-home {
+    position: relative;
+    font-family: Gilroy, sans-serif;
+
+    margin: 0 auto;
+    max-width: 1308px;
+    width: 100%;
+
+    border-left: 1px solid;
+    border-right: 1px solid;
+
+    &__info {
+        padding: 112px 32px 88px;
+
+        &-title {
+            max-width: 480px;
+
+            font-weight: bold;
+            font-size: 52px;
+            line-height: 64px;
+
+            margin-bottom: 8px;
+        }
+
+        &-text {
+            font-size: 16px;
+            line-height: 22px;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border-top: 1px solid;
+
+        font-size: 16px;
+        line-height: 22px;
+
+        &-title {
+            font-weight: bold;
+        }
+
+        &-text {
+            margin-bottom: 8px;
+        }
+
+        &-link {
+            color: $orange1 !important;
+        }
+
+        &-icon {
+            margin-right: 18px;
+        }
+
+        &-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 32px;
+
+            & + & {
+                border-left: 1px solid;
+            }
+        }
+    }
+
+    &__image {
+        position: absolute;
+
+        top: 80px;
+        right: 220px;
+    }
+
+    &::before,
+    &::after {
+        content: '';
+
+        position: absolute;
+        width: 392px;
+        height: 381px;
+
+        opacity: 0.4;
+        filter: blur(172px);
+    }
+
+    &:after {
+        top: 80px;
+        right: -30px;
+        background: radial-gradient(60.78% 60.78% at 41.92% 39.22%, rgba(255, 217, 19, 0.4) 0%, rgba(255, 217, 19, 0) 50.52%), radial-gradient(59.58% 59.58% at 40.87% 40.42%, rgba(17, 17, 17, 0) 0%, rgba(17, 17, 17, 0) 69.79%, rgba(17, 17, 17, 0.7) 100%), linear-gradient(136.42deg, #FF2416 6.59%, #9FE707 47.79%, #FF4E16 88.05%);
+    }
+
+    &::before {
+        top: 0;
+        right: 220px;
+        background: radial-gradient(60.78% 60.78% at 41.92% 39.22%, rgba(255, 217, 19, 0.4) 0%, rgba(255, 217, 19, 0) 50.52%), radial-gradient(59.58% 59.58% at 40.87% 40.42%, rgba(17, 17, 17, 0) 0%, rgba(17, 17, 17, 0) 69.79%, rgba(17, 17, 17, 0.7) 100%), linear-gradient(136.42deg, #FF1694 6.59%, #E70707 47.79%, rgba(231, 195, 7, 0) 88.05%);
+    }
+}
+
+@include dark {
+    .catalog-home {
+        color: $white;
+        border-color: rgba(255, 255, 255, 0.1);
+
+        &__list {
+            border-color: rgba(255, 255, 255, 0.1);
+
+            &-item {
+                border-color: rgba(255, 255, 255, 0.1);
+            }
+        }
+    }
+}
+@include white {
+    .catalog-home {
+        color: $black;
+        border-color: rgba(0, 0, 0, 0.16);
+
+        &__list {
+            border-color: rgba(0, 0, 0, 0.16);
+
+            &-item {
+                border-color: rgba(0, 0, 0, 0.16);
+            }
+        }
+    }
+}
+
+// 1200
+@include media-breakpoint-down(lg) {
+    .catalog-home {
+        width: auto;
+        margin: 0 20px;
+
+        &__info {
+            padding: 100px 26px 75px;
+
+            &-title {
+                font-size: 42px;
+                line-height: 54px;
+
+                margin-bottom: 4px;
+            }
+        }
+
+        &__list {
+
+            &-icon {
+                margin-right: 14px;
+            }
+
+            &-item {
+                padding: 30px 26px;
+            }
+        }
+    }
+}
+
+// 992
+@include media-breakpoint-down(md) {
+    .catalog-home {
+        margin: 0 15px;
+
+        &__info {
+            padding: 50px 20px 24px;
+
+            &-title {
+                font-size: 38px;
+                line-height: 46px;
+
+                margin-bottom: 0;
+            }
+        }
+
+        &__list {
+            grid-template-columns: repeat(1, 1fr);
+
+            &-item {
+                padding: 26px 22px;
+
+                & + & {
+                    border-left: none;
+                    border-top: 1px solid;
+                }
+            }
+        }
+
+        &__image {
+            display: none;
+        }
+
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
+}
+
+// 768
+@include media-breakpoint-down(sm) {
+    .catalog-home {
+        margin: 0 10px;
+
+        &__info {
+            padding: 50px 12px 24px;
+
+            &-title {
+                font-size: 26px;
+                line-height: 34px;
+            }
+        }
+
+        &__list {
+
+            &-item {
+                padding: 22px 14px;
+            }
+        }
+    }
+}
+
+// 576
+@media screen and (max-width: 576px) {
+    .catalog-home {
+
+    }
+}

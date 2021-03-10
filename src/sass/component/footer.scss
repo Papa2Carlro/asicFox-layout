@@ -1,0 +1,329 @@
+.footer {
+    display: flex;
+    transition: .3s 0s;
+    border-top: 1px solid;
+
+    &__container {
+        margin: 0 auto;
+        max-width: 1308px;
+        width: 100%;
+
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__body {
+        flex: 1 0 50%;
+
+        &-container {
+            display: flex;
+            flex-wrap: wrap;
+
+            &--h100 {
+                height: 100%;
+            }
+
+            &--right {
+                height: calc(100% - 64px);
+            }
+        }
+
+        &-item {
+            flex: 1;
+            min-width: 290px;
+
+            padding: 45px 24px 40px;
+            border-bottom: 1px solid;
+
+            & + & {
+                border-left: 1px solid;
+            }
+        }
+
+        &-title {
+            font-size: 16px;
+            line-height: 20px;
+            font-weight: bold;
+
+            margin-bottom: 25px;
+        }
+
+        &-link {
+            a {
+                font-size: 16px;
+                line-height: 20px;
+
+                transition: .2s 0s;
+
+                &:hover {
+                    color: $orange1 !important;
+                    text-decoration: none;
+                }
+            }
+
+            & + & {
+                margin-top: 16px;
+            }
+        }
+
+        &-logo {
+            margin-bottom: 60px;
+        }
+    }
+
+    &__info {
+        font-family: Gilroy, sans-serif;
+
+        &-item {
+            display: flex;
+            flex-direction: column;
+
+            margin-bottom: 20px;
+        }
+
+        &-header {
+            display: flex;
+            align-items: center;
+
+            margin-bottom: 8px;
+        }
+
+        &-title {
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 22px;
+
+            margin-left: 6px;
+        }
+
+        &-link {
+            font-size: 16px;
+            line-height: 22px;
+
+            margin-left: 8px;
+            color: $orange1 !important;
+        }
+
+        &-content {
+            font-size: 16px;
+            line-height: 22px;
+
+            margin-bottom: 4px;
+        }
+
+        &-description {
+            font-size: 12px;
+            line-height: 16px;
+        }
+
+        &-soc {
+            display: flex;
+            margin-bottom: 8px;
+        }
+
+        &-mess + &-mess {
+            margin-left: 8px;
+        }
+    }
+
+    &__copy {
+        margin: 0 auto;
+        padding: 24px 0;
+
+        &-text {
+            margin-left: 24px;
+            font-size: 16px;
+            font-family: Gilroy, sans-serif;
+        }
+    }
+}
+
+@include dark {
+    .footer {
+        color: $white;
+        background: $dark1;
+        border-color: rgba(255, 255, 255, 0.1);
+
+        &__body {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+            &-container {
+                border-left: 1px solid rgba(255, 255, 255, 0.1);
+                border-right: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            &-item {
+                border-color: rgba(255, 255, 255, 0.1);
+            }
+
+            &-qr svg {
+                fill: $white;
+            }
+
+            &-link {
+                a {
+                    color: $white;
+                }
+            }
+        }
+
+        &__copy {
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+
+            &-text {
+                color: rgba(255, 255, 255, 0.5);
+            }
+        }
+
+        &__info {
+
+            &-description {
+                color: rgba(255, 255, 255, 0.5);
+            }
+        }
+    }
+}
+
+@include white {
+    .footer {
+        color: $black;
+        background: $white1;
+        border-color: rgba(0, 0, 0, 0.16);
+
+        &__body {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+
+            &-container {
+                border-left: 1px solid rgba(0, 0, 0, 0.16);
+                border-right: 1px solid rgba(0, 0, 0, 0.16);
+            }
+
+            &-item {
+                border-color: rgba(0, 0, 0, 0.16);
+            }
+
+            &-qr svg {
+                fill: $black;
+            }
+
+            &-link {
+                a {
+                    color: $black;
+                }
+            }
+        }
+
+        &__copy {
+            border-left: 1px solid rgba(0, 0, 0, 0.16);
+            border-right: 1px solid rgba(0, 0, 0, 0.16);
+
+            &-text {
+                color: rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        &__info {
+
+            &-description {
+                color: rgba(0, 0, 0, 0.5);
+            }
+        }
+    }
+}
+
+// 1200
+@include media-breakpoint-down(lg) {
+    .footer {
+
+        &__container {
+            display: block;
+        }
+
+        &__body {
+
+            &-logo {
+                margin-bottom: 50px;
+            }
+
+            &-item {
+                padding: 35px 20px;
+            }
+        }
+    }
+}
+
+// 992
+@include media-breakpoint-down(md) {
+    .footer {
+
+        &__container {
+            margin: 0 15px;
+        }
+
+        &__body {
+
+            &-logo {
+                margin-bottom: 40px;
+            }
+
+            &-item {
+                padding: 25px 15px;
+            }
+        }
+
+        &__info {
+
+            &-item {
+                &:last-child {
+                    margin-top: 24px;
+                }
+            }
+        }
+
+        &__copy {
+            padding: 17px 0;
+            max-width: 808px;
+
+            &-text {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+// 768
+@include media-breakpoint-down(sm) {
+    .footer {
+
+        &__container {
+            margin: 0 10px;
+        }
+
+        &__body {
+
+            &-logo {
+                margin-bottom: 33px;
+            }
+
+            &-item {
+                padding: 16px 10px;
+            }
+
+            &-container {
+                &--right {
+                    height: auto;
+                }
+            }
+        }
+
+        &__copy {
+            padding: 10px 0;
+            max-width: 600px;
+
+            &-text {
+                font-size: 12px;
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{% set title = 'Trade in' %}
+{% extends 'includes/_base.njk' %}
+
+{% block content %}
+    {% include '../src/includes/_loader.njk' %}
+
+    {% include '../src/components/trade/home.njk' %}
+    {% include '../src/components/trade/info.njk' %}
+    {% include '../src/components/trade/faq.njk' %}
+    {% include '../src/components/trade/contact.njk' %}
+{% endblock %}

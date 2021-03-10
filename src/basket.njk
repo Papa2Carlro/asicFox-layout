@@ -1,0 +1,129 @@
+{% set title = 'Basket' %}
+{% extends 'includes/_base.njk' %}
+{% import './includes/_macro.njk' as macro %}
+
+{% set breadcrumbs = [
+    {
+        label: 'Главная'
+    },
+    {
+        label: 'Asic майнеры'
+    },
+    {
+        label: 'Новые асики'
+    },
+    {
+        label: 'Корзина'
+    }
+] %}
+
+{% block content %}
+    {% include '../src/includes/_loader.njk' %}
+
+    <div class="basket">
+        {{ macro.breadcrumbs(breadcrumbs) }}
+
+        <div class="basket__title">
+            Корзина
+        </div>
+
+        <ul class="basket__products">
+            <li class="basket__products-item">
+                <div class="basket__products-info">
+                    <a href="">
+                        <img src="/assets/img/product/img1.png" alt="" class="basket__products-image">
+                    </a>
+
+                    <div class="basket__products-content">
+                        <div class="basket__products-name">
+                            ASIC Antminer T17 42Th/s БУ - Китай
+                        </div>
+
+                        <a href="" class="basket__products-edit">Редактировать</a>
+                    </div>
+                </div>
+
+                <div class="basket__products-right">
+
+                    <div class="basket__products-price">
+                        $ 1 900
+                    </div>
+
+                    <input min="1" value="1" type="number" class="basket__products-input input">
+
+                    <div class="basket__products-total">
+                        Итого: $ 1 900
+                    </div>
+                </div>
+            </li>
+
+            <li class="basket__products-item">
+                <div class="basket__products-info">
+                    <a href="">
+                        <img src="/assets/img/product/img1.png" alt="" class="basket__products-image">
+                    </a>
+
+                    <div class="basket__products-content">
+                        <div class="basket__products-name">
+                            ASIC Antminer T17 42Th/s БУ - Китай
+                        </div>
+
+                        <a href="" class="basket__products-edit">Редактировать</a>
+                    </div>
+                </div>
+
+                <div class="basket__products-right">
+
+                    <div class="basket__products-price">
+                        $ 1 900
+                    </div>
+
+                    <input min="1" value="1" type="number" class="basket__products-input input">
+
+                    <div class="basket__products-total">
+                        Итого: $ 1 900
+                    </div>
+                </div>
+            </li>
+
+            <li class="basket__products-item">
+                <div class="basket__products-info">
+                    <a href="">
+                        <img src="/assets/img/product/img1.png" alt="" class="basket__products-image">
+                    </a>
+
+                    <div class="basket__products-content">
+                        <div class="basket__products-name">
+                            ASIC Antminer T17 42Th/s БУ - Китай
+                        </div>
+
+                        <a href="" class="basket__products-edit">Редактировать</a>
+                    </div>
+                </div>
+
+                <div class="basket__products-right">
+
+                    <div class="basket__products-price">
+                        $ 1 900
+                    </div>
+
+                    <input min="1" value="1" type="number" class="basket__products-input input">
+
+                    <div class="basket__products-total">
+                        Итого: $ 1 900
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <div class="basket__actions">
+            <div class="basket__actions-reset btn--empty">
+                Обновить корзину
+            </div>
+
+            <div class="basket__actions-checkout btn--gradient">
+                Оформить заказ
+            </div>
+        </div>
+    </div>
+{% endblock %}

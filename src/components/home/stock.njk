@@ -1,0 +1,89 @@
+{% import '../../includes/_macro.njk' as macro %}
+{% set products = [
+    {
+        name: 'Bitmain Antminer T19 – 84Th',
+        price: '$ 7 150',
+        hit: false,
+        oldPrice: '',
+        image: '/assets/img/product/img1.png',
+        rate: 4,
+        comments: 4,
+        options: {
+        algoritm: 'SHA256',
+        hash: '14,5',
+        bt: '1400 Вт'
+    }
+    },
+    {
+        name: 'Bitmain Antminer T19 – 84Th',
+        price: '$ 7 150',
+        hit: false,
+        oldPrice: '$ 6 150',
+        image: '/assets/img/product/img2.png',
+        rate: 4,
+        comments: 4,
+        options: {
+        algoritm: 'SHA256',
+        hash: '14,5',
+        bt: '1400 Вт'
+    }
+    },
+    {
+        name: 'Bitmain Antminer T19 – 84Th',
+        price: '$ 7 150',
+        hit: true,
+        oldPrice: '',
+        image: '/assets/img/product/img1.png',
+        rate: 4,
+        comments: 4,
+        options: {
+        algoritm: 'SHA256',
+        hash: '14,5',
+        bt: '1400 Вт'
+    }
+    },
+    {
+        name: 'Bitmain Antminer T19 – 84Th',
+        price: '$ 7 150',
+        hit: false,
+        oldPrice: '',
+        image: '/assets/img/product/img2.png',
+        rate: 4,
+        comments: 4,
+        options: {
+        algoritm: 'SHA256',
+        hash: '14,5',
+        bt: '1400 Вт'
+    }
+    }
+] %}
+
+<aside class="products">
+    <div class="products__container">
+
+        <div class="products__panel products__panel--stock">
+            <div class="products__panel-title">
+                В наличии
+            </div>
+
+            <div class="products__panel-text">
+                Так же вы можете взять асик на заказ
+            </div>
+
+            <a href="" class="btn--empty">
+                Показать больше
+            </a>
+        </div>
+
+        <ul class="products__list">
+            {% for product in products %}
+                {{ macro.cart(product, 'products__cart') }}
+            {% endfor %}
+        </ul>
+
+        <a href="" class="products__more">
+            <p class="products__more-text">Еще в наличии</p>
+            <img src="/assets/img/controll/right.svg" alt="" class="products__more-icon">
+        </a>
+    </div>
+</aside>

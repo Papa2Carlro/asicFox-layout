@@ -1,0 +1,66 @@
+#app {
+    overflow: hidden;
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+@include dark {
+    a {
+        color: $white;
+    }
+}
+
+@include white {
+    a {
+        color: $black;
+    }
+}
+
+body {
+    &.fixed {
+        overflow: hidden;
+    }
+
+    &.fixed__header {
+        padding-top: 88px;
+    }
+}
+
+// 1200
+@include media-breakpoint-down(lg) {
+    body {
+        &.fixed__header {
+            padding-top: 80px;
+        }
+    }
+}
+
+// 992
+@include media-breakpoint-down(md) {
+    body {
+        &.fixed__header {
+            padding-top: 70px;
+        }
+    }
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 3px;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: $blue1;
+}
+
+::-webkit-scrollbar-thumb {
+    height: 50px;
+    background-color: $white1;
+}

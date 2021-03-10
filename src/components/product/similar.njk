@@ -1,0 +1,76 @@
+{% import '../../includes/_macro.njk' as macro %}
+{% set products = [
+    {
+        name: 'Bitmain Antminer T19 – 84Th',
+        price: '$ 7 150',
+        hit: false,
+        oldPrice: '',
+        image: '/assets/img/product/img1.png',
+        rate: 4,
+        comments: 4,
+        options: {
+        algoritm: 'SHA256',
+        hash: '14,5',
+        bt: '1400 Вт'
+    }
+    },
+    {
+        name: 'Bitmain Antminer T19 – 84Th',
+        price: '$ 7 150',
+        hit: false,
+        oldPrice: '$ 6 150',
+        image: '/assets/img/product/img2.png',
+        rate: 4,
+        comments: 4,
+        options: {
+        algoritm: 'SHA256',
+        hash: '14,5',
+        bt: '1400 Вт'
+    }
+    },
+    {
+        name: 'Bitmain Antminer T19 – 84Th',
+        price: '$ 7 150',
+        hit: true,
+        oldPrice: '',
+        image: '/assets/img/product/img1.png',
+        rate: 4,
+        comments: 4,
+        options: {
+        algoritm: 'SHA256',
+        hash: '14,5',
+        bt: '1400 Вт'
+    }
+    },
+    {
+        name: 'Bitmain Antminer T19 – 84Th',
+        price: '$ 7 150',
+        hit: false,
+        oldPrice: '',
+        image: '/assets/img/product/img2.png',
+        rate: 4,
+        comments: 4,
+        options: {
+        algoritm: 'SHA256',
+        hash: '14,5',
+        bt: '1400 Вт'
+    }
+    }
+] %}
+
+<section class="products">
+    <div class="products__container">
+
+        <div class="products__panel products__panel--similar">
+            <div class="products__panel-title">
+                Похожие товары
+            </div>
+        </div>
+
+        <ul class="products__list products__list--similar">
+            {% for product in products %}
+                {{ macro.cart(product, 'products__cart') }}
+            {% endfor %}
+        </ul>
+    </div>
+</section>

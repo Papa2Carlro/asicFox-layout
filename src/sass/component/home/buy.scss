@@ -1,0 +1,51 @@
+.buy {
+    $parent: &;
+    display: flex;
+
+    &__btn {
+        flex: 1;
+    }
+
+    &__square {
+        cursor: pointer;
+
+        padding: 10px;
+        border: 1px solid $orange1;
+
+        margin-left: 8px;
+        transition: .3s 0s;
+
+        & > svg {
+            width: 24px;
+            height: 24px;
+
+            transition: .3s 0s;
+            stroke: $orange1;
+        }
+
+        &:hover {
+            background: $orange1;
+
+            & > svg {
+                stroke: $white1;
+            }
+        }
+    }
+
+    &--cart {
+        height: 44px;
+
+        #{$parent} {
+
+            &__square {
+                padding: 8px;
+                margin-left: 3px;
+
+                & > svg {
+                    width: 22px;
+                    height: 22px;
+                }
+            }
+        }
+    }
+}

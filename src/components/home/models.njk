@@ -1,0 +1,217 @@
+{% import '../../includes/_macro.njk' as macro %}
+{% set products = [
+    {
+        title: 'Bitcoin',
+        body: [
+        {
+            name: '[Bitcoin] Antminer T19 – 84Th',
+            price: '$ 7 150',
+            hit: false,
+            oldPrice: '',
+            image: '/assets/img/product/img1.png',
+            rate: 4,
+            comments: 4,
+            options: {
+            algoritm: 'SHA256',
+            hash: '14,5',
+            bt: '1400 Вт'
+        }
+        },
+        {
+            name: 'Bitmain Antminer T19 – 84Th',
+            price: '$ 7 150',
+            hit: false,
+            oldPrice: '$ 6 150',
+            image: '/assets/img/product/img2.png',
+            rate: 4,
+            comments: 4,
+            options: {
+            algoritm: 'SHA256',
+            hash: '14,5',
+            bt: '1400 Вт'
+        }
+        },
+        {
+            name: 'Bitmain Antminer T19 – 84Th',
+            price: '$ 7 150',
+            hit: true,
+            oldPrice: '',
+            image: '/assets/img/product/img1.png',
+            rate: 4,
+            comments: 4,
+            options: {
+            algoritm: 'SHA256',
+            hash: '14,5',
+            bt: '1400 Вт'
+        }
+        },
+        {
+            name: 'Bitmain Antminer T19 – 84Th',
+            price: '$ 7 150',
+            hit: false,
+            oldPrice: '',
+            image: '/assets/img/product/img2.png',
+            rate: 4,
+            comments: 4,
+            options: {
+            algoritm: 'SHA256',
+            hash: '14,5',
+            bt: '1400 Вт'
+        }
+        }]
+    },
+    {
+        title: 'Zec',
+        body: [
+        {
+            name: '[Zec] Antminer T19 – 84Th',
+            price: '$ 7 150',
+            hit: false,
+            oldPrice: '',
+            image: '/assets/img/product/img2.png',
+            rate: 4,
+            comments: 4,
+            options: {
+            algoritm: 'SHA256',
+            hash: '14,5',
+            bt: '1400 Вт'
+        }
+        },
+        {
+            name: 'Bitmain Antminer T19 – 84Th',
+            price: '$ 7 150',
+            hit: false,
+            oldPrice: '$ 6 150',
+            image: '/assets/img/product/img1.png',
+            rate: 4,
+            comments: 4,
+            options: {
+            algoritm: 'SHA256',
+            hash: '14,5',
+            bt: '1400 Вт'
+        }
+        },
+        {
+            name: 'Bitmain Antminer T19 – 84Th',
+            price: '$ 7 150',
+            hit: true,
+            oldPrice: '',
+            image: '/assets/img/product/img2.png',
+            rate: 4,
+            comments: 4,
+            options: {
+            algoritm: 'SHA256',
+            hash: '14,5',
+            bt: '1400 Вт'
+        }
+        },
+        {
+            name: 'Bitmain Antminer T19 – 84Th',
+            price: '$ 7 150',
+            hit: false,
+            oldPrice: '',
+            image: '/assets/img/product/img1.png',
+            rate: 4,
+            comments: 4,
+            options: {
+            algoritm: 'SHA256',
+            hash: '14,5',
+            bt: '1400 Вт'
+        }
+        }
+    ]
+    },
+    {
+        title: 'Miner pack',
+        body: [
+        {
+            name: '[Miner pack] Antminer T19 – 84Th',
+            price: '$ 7 150',
+            hit: false,
+            oldPrice: '',
+            image: '/assets/img/product/img1.png',
+            rate: 4,
+            comments: 4,
+            options: {
+            algoritm: 'SHA256',
+            hash: '14,5',
+            bt: '1400 Вт'
+        }
+        },
+        {
+            name: 'Bitmain Antminer T19 – 84Th',
+            price: '$ 7 150',
+            hit: false,
+            oldPrice: '$ 6 150',
+            image: '/assets/img/product/img2.png',
+            rate: 4,
+            comments: 4,
+            options: {
+            algoritm: 'SHA256',
+            hash: '14,5',
+            bt: '1400 Вт'
+        }
+        },
+        {
+            name: 'Bitmain Antminer T19 – 84Th',
+            price: '$ 7 150',
+            hit: true,
+            oldPrice: '',
+            image: '/assets/img/product/img1.png',
+            rate: 4,
+            comments: 4,
+            options: {
+            algoritm: 'SHA256',
+            hash: '14,5',
+            bt: '1400 Вт'
+        }
+        },
+        {
+            name: 'Bitmain Antminer T19 – 84Th',
+            price: '$ 7 150',
+            hit: false,
+            oldPrice: '',
+            image: '/assets/img/product/img2.png',
+            rate: 4,
+            comments: 4,
+            options: {
+            algoritm: 'SHA256',
+            hash: '14,5',
+            bt: '1400 Вт'
+        }
+        }
+    ]
+    }
+] %}
+
+<aside id="models" class="products">
+    <div class="products__container">
+
+        <div class="products__panel products__panel--models">
+
+            <ul class="products__panel-tabs">
+                {% for tab in products %}
+                    <li data-tabs="{{ tab.title }}"
+                        class="products__panel-tab {% if loop.first %} active {% endif %}">{{ tab.title }}</li>
+                {% endfor %}
+            </ul>
+
+            <div class="products__panel-text">
+                Разные модели асиков специализированны на разных видах крипты
+            </div>
+        </div>
+
+        {% for productList in products %}
+            <ul data-body="{{ productList.title }}" class="products__list products__list--models {% if loop.first %}visible{% endif %}">
+                {% for product in productList.body %}
+                    {{ macro.cart(product, 'products__cart') }}
+                {% endfor %}
+            </ul>
+        {% endfor %}
+
+        <a href="" class="products__more">
+            <p class="products__more-text">В католог</p>
+            <img src="/assets/img/controll/right.svg" alt="" class="products__more-icon">
+        </a>
+    </div>
+</aside>

@@ -1,0 +1,334 @@
+.products {
+    transition: .3s 0s;
+
+    &__container {
+        position: relative;
+
+        display: flex;
+        margin: 0 auto;
+        border-left: 1px solid;
+
+        width: 100%;
+        max-width: 1308px;
+    }
+
+    &__panel {
+        $panel: &;
+        font-family: Gilroy, sans-serif;
+
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+        border-right: 1px solid;
+
+        &--stock {
+            max-width: 220px;
+            padding: 40px 16px 56px;
+
+            #{$panel} {
+
+                &-title {
+
+                    font-weight: bold;
+                    font-size: 32px;
+                    line-height: 40px;
+
+                    margin-bottom: 8px;
+                }
+
+                &-text {
+                    font-size: 16px;
+                    line-height: 19px;
+                }
+            }
+        }
+
+        &--models {
+            padding: 32px 16px;
+            align-items: flex-end;
+            justify-content: space-between;
+            max-width: 220px;
+
+            #{$panel} {
+
+                &-tabs {
+                    text-align: right;
+
+                    margin-right: -16px;
+                }
+
+                &-tab {
+                    font-weight: bold;
+                    font-size: 24px;
+                    line-height: 30px;
+
+                    cursor: pointer;
+                    transition: .3s 0s;
+                    padding-right: 30px;
+
+                    border-right: 2px solid transparent;
+
+                    &:hover {
+                        color: rgba($orange1, .7);
+                        border-color: rgba($orange1, .7);
+                    }
+
+                    &.active {
+                        color: $orange1;
+                        border-color: $orange1;
+                    }
+                }
+
+                &-tab + &-tab {
+                    margin-top: 8px;
+                }
+            }
+        }
+
+        &--similar {
+            max-width: 260px;
+            padding: 40px 32px 56px;
+
+            #{$panel} {
+
+                &-title {
+                    font-weight: bold;
+                    font-size: 32px;
+                    line-height: 40px;
+
+                    margin-bottom: 8px;
+                }
+            }
+        }
+    }
+
+    &__list {
+        display: flex;
+        width: 100%;
+
+        margin-right: 110px;
+
+        &--models {
+            display: none;
+
+            &.visible {
+                display: flex;
+            }
+        }
+
+        &--similar {
+            margin-right: 0;
+        }
+    }
+
+    &__more {
+        position: absolute;
+        height: 100%;
+        width: 170px;
+
+        top: 0;
+        right: -61px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 0 25px;
+
+        background: linear-gradient(135deg, #FF4E16 0%, #FF5A13 45.83%, #FFB90F 100%);
+        box-shadow: -65px 0px 60px 11px rgba(16, 16, 23, 0.7);
+    }
+
+    &__cart {
+        flex: 1 0 25%;
+    }
+}
+
+@include dark {
+    .products {
+        color: $white;
+        background: $dark1;
+
+        &__panel,
+        &__container {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        &__panel {
+            $parent: &;
+
+            &--models {
+
+                #{$parent} {
+
+                    &-tab {
+                        color: rgba(255, 255, 255, 0.5);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include white {
+    .products {
+        color: $black;
+        background: $white1;
+
+        &__panel,
+        &__container {
+            border-color: rgba(255, 255, 255, 0.16);
+        }
+
+        &__panel {
+            $parent: &;
+
+            &--models {
+
+                #{$parent} {
+
+                    &-tab {
+                        color: rgba(0, 0, 0, 0.5);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 576
+@media screen and (max-width: 1430px) {
+    .products {
+
+        &__more {
+            right: 0;
+            width: 110px;
+        }
+    }
+}
+
+// 992
+@include media-breakpoint-down(lg) {
+    .products {
+
+    }
+}
+
+// 992
+@include media-breakpoint-down(md) {
+    .products {
+
+        &__container {
+            width: auto;
+            margin: 0 15px;
+            flex-direction: column;
+        }
+
+        &__panel {
+            $panel: &;
+
+            width: 100%;
+            max-width: 100%;
+            border-bottom: 1px solid;
+
+            &--stock {
+                padding: 32px 8px 24px;
+
+                #{$panel} {
+
+                    &-link {
+                        display: none;
+                    }
+                }
+            }
+
+            &--models {
+                display: flex;
+                align-items: center;
+                padding: 32px 0 0;
+
+                #{$panel} {
+
+                    &-tabs {
+                        display: flex;
+                        text-align: left;
+
+                        margin-right: 0;
+                    }
+
+                    &-tab {
+                        padding-right: 0;
+                        padding-bottom: 30px;
+
+                        margin: 0 16px;
+
+                        border-right: none;
+                        border-bottom: 2px solid transparent;
+                    }
+
+                    &-text {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        &__list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            width: 100%;
+
+            margin-right: 0;
+            margin-bottom: 15px;
+
+            &--models {
+                display: none;
+
+                &.visible {
+                    display: grid;
+                }
+            }
+        }
+
+        &__more {
+            position: relative;
+            width: auto;
+            height: 70px;
+
+            margin: 0 -15px;
+
+            right: 0;
+
+            &-text {
+                margin-right: 15px;
+            }
+
+            &:after {
+                display: none;
+            }
+        }
+
+        &__cart {
+            flex: 1 0 260px;
+        }
+    }
+}
+
+// 768
+@include media-breakpoint-down(sm) {
+    .products {
+
+    }
+}
+
+// 576
+@media screen and (max-width: 576px) {
+    .products {
+
+        &__list {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}

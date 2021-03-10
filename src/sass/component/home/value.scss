@@ -1,0 +1,141 @@
+.value {
+    border-bottom: 1px solid;
+
+    &__container {
+        display: flex;
+
+        margin: 0 auto;
+        max-width: 1308px;
+
+        border-left: 1px solid;
+        border-right: 1px solid;
+    }
+
+    &__group {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        flex: 1;
+        padding: 15px 0;
+
+        &-image {
+            display: block;
+            margin-right: 8px;
+        }
+
+        &-title {
+            font-family: Gilroy, sans-serif;
+
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        &-price {
+            display: flex;
+
+            font-family: Gilroy, sans-serif;
+
+            font-size: 12px;
+            line-height: 16px;
+
+            opacity: .8;
+
+            b {
+                display: flex;
+                margin-left: 6px;
+
+                svg {
+                    position: relative;
+                    top: 2px;
+
+                    width: 12px;
+                    height: 10px;
+
+                    margin-right: 2px;
+                }
+
+                &.up {
+                    color: $green1;
+
+                    svg {
+                        transform: rotate(90deg);
+                    }
+
+                    path {
+                        stroke: $green1;
+                    }
+                }
+
+                &.down {
+                    color: $red1;
+
+                    svg {
+                        transform: rotate(-90deg);
+                    }
+
+                    path {
+                        stroke: $red1;
+                    }
+                }
+            }
+        }
+
+        & + & {
+            border-left: 1px solid;
+        }
+    }
+}
+
+@include dark {
+    .value {
+        color: $white;
+        background: $dark1;
+        border-color: rgba(255, 255, 255, 0.1);
+
+        &__group,
+        &__container {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+    }
+}
+@include white {
+    .value {
+        color: $black;
+        background: $white1;
+        border-color: rgba(0, 0, 0, 0.16);
+
+        &__group,
+        &__container {
+            border-color: rgba(0, 0, 0, 0.16);
+        }
+    }
+}
+
+// 992
+@include media-breakpoint-down(xl) {
+    .value {
+    }
+}
+
+// 992
+@include media-breakpoint-down(lg) {
+    .value {
+
+    }
+}
+
+// 768
+@include media-breakpoint-down(md) {
+    .value {
+        display: none;
+    }
+}
+
+// 576
+@include media-breakpoint-down(sm) {
+    .value {
+
+    }
+}

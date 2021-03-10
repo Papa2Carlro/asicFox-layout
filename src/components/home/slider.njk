@@ -1,0 +1,62 @@
+{% set sliders = [
+    {
+        title: 'Размещай оборудывание на фермах в китае',
+        image: './assets/img/slider/slide1.png'
+    },
+    {
+        title: 'Мы сделаем ваш майнинг прибыльным',
+        image: './assets/img/slider/slide1.png'
+    },
+    {
+        title: 'Lorem ipsum dolor sit amet, consectetur.',
+        image: './assets/img/slider/slide1.png'
+    }
+] %}
+
+<section id="slider" data-length="{{ sliders.length }}" class="slider">
+    <div class="slider__container">
+        <div class="slider__info">
+            <div class="slider__info-track">
+                <div id="slider_text" class="slider__info-text">
+                    {% for slider in sliders %}
+                        <p>{{ slider.title }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <a href="" class="slider__info-link">
+                <span>Подробнее</span>
+            </a>
+
+            <div class="slider__control">
+                <div class="slider__control-arr">
+                    <div class="slider__control-svg disabled" id="slider_left">
+                        <svg class="disabled" width="24" height="17" viewBox="0 0 24 17" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 8.5H2M2 8.5L9.33333 1M2 8.5L9.33333 16" stroke-width="2"/>
+                        </svg>
+                    </div>
+
+                    <div class="slider__control-svg" id="slider_right">
+                        <svg width="24" height="17" viewBox="0 0 24 17" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 8.5H2M2 8.5L9.33333 1M2 8.5L9.33333 16" stroke-width="2"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div id="slider_dots" class="slider__control-dots"></div>
+            </div>
+        </div>
+
+        <div class="slider__image">
+
+            <div id="slider_image" class="slider__image-track">
+                {% for slider in sliders %}
+                    <img src="{{ slider.image }}" alt="">
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+</section>

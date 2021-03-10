@@ -1,0 +1,99 @@
+.logo {
+    display: flex;
+    align-content: center;
+    text-decoration: none !important;
+
+    &__text {
+        font-family: Gilroy, sans-serif;
+        font-weight: 800;
+
+        font-size: 33px;
+        line-height: 41px;
+
+        display: block;
+        transition: .2s 0s;
+
+        &-orange {
+            color: $orange1;
+        }
+    }
+
+    &__icon {
+        margin-left: 4px;
+    }
+}
+
+@include dark {
+    .logo {
+
+        &__text {
+            color: $white;
+        }
+    }
+}
+
+@include white {
+    .logo {
+
+        &__text {
+            color: $black;
+        }
+    }
+}
+
+// 1200
+@include media-breakpoint-down(xl) {
+    .logo {
+        $parent: &;
+
+        &--header {
+            #{$parent} {
+
+                &__text {
+                    font-size: 27px;
+                    line-height: 41px;
+                }
+            }
+        }
+    }
+}
+
+// 992
+@include media-breakpoint-down(lg) {
+    .logo {
+        $parent: &;
+
+        &--header {
+            #{$parent} {
+
+                &__text {
+                    font-size: 25px;
+                    line-height: 41px;
+                }
+            }
+        }
+    }
+}
+
+// 768
+@include media-breakpoint-down(md) {
+    .logo {
+
+    }
+}
+
+// 576
+@include media-breakpoint-down(sm) {
+    .logo {
+        $parent: &;
+
+        &--header {
+            #{$parent} {
+
+                &__text {
+                    display: none;
+                }
+            }
+        }
+    }
+}

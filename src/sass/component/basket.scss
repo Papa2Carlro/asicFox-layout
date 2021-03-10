@@ -1,0 +1,256 @@
+.basket {
+    margin: 0 auto;
+    padding: 65px 32px 85px;
+    max-width: 1308px;
+    width: 100%;
+
+    border-left: 1px solid;
+    border-right: 1px solid;
+
+    &__title {
+        font-family: Gilroy, sans-serif;
+
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 40px;
+
+        margin-bottom: 26px;
+    }
+
+    &__products {
+        $margin: 120px;
+        border-bottom: 1px solid;
+
+        &-item {
+            border-top: 1px solid;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 8px 0;
+        }
+
+        &-info {
+            display: flex;
+            align-items: center;
+        }
+
+        &-image {
+            width: 96px;
+            height: 96px;
+        }
+
+        &-name {
+            font-family: Gilroy, sans-serif;
+            margin-left: 32px;
+
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        &-edit {
+            font-family: Gilroy, sans-serif;
+
+            font-size: 16px;
+            line-height: 22px;
+
+            margin-left: 15px;
+            color: $orange1 !important;
+        }
+
+        &-right {
+            display: flex;
+            align-items: center;
+        }
+
+        &-total {
+            font-family: Gilroy, sans-serif;
+
+            text-align: right;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        &-input {
+            width: 150px;
+            margin-right: $margin;
+        }
+
+        &-price {
+            font-family: Gilroy, sans-serif;
+
+            font-size: 16px;
+            line-height: 22px;
+
+            margin-right: $margin;
+        }
+    }
+
+    &__actions {
+        margin-top: 37px;
+        height: 55px;
+
+        display: flex;
+        justify-content: flex-end;
+
+        &-checkout {
+            width: 220px;
+        }
+
+        &-reset {
+            width: 220px;
+            height: 100%;
+            margin-right: 24px;
+        }
+    }
+}
+
+@include dark {
+    .basket {
+        color: $white;
+        border-color: rgba(255, 255, 255, 0.1);
+
+        &__products {
+            border-color: rgba(255, 255, 255, 0.1);
+
+            &-item {
+                border-color: rgba(255, 255, 255, 0.1);
+            }
+        }
+    }
+}
+
+@include white {
+    .basket {
+        color: $black;
+        border-color: rgba(255, 255, 255, 0.16);
+
+        &__products {
+            border-color: rgba(255, 255, 255, 0.16);
+
+            &-item {
+                border-color: rgba(255, 255, 255, 0.16);
+            }
+        }
+    }
+}
+
+// 992
+@include media-breakpoint-down(lg) {
+    .basket {
+        width: auto;
+        margin: 0 15px;
+
+        &__products {
+            $margin: 45px;
+
+            &-name {
+                margin-left: 20px;
+            }
+
+            &-input {
+                width: 130px;
+                margin-right: $margin;
+            }
+
+            &-price {
+                margin-right: $margin;
+            }
+        }
+    }
+}
+
+// 992
+@include media-breakpoint-down(md) {
+    .basket {
+        padding: 65px 20px 95px;
+
+        &__products {
+
+            &-name {
+                margin-left: 20px;
+            }
+
+            &-price,
+            &-input {
+                display: none;
+            }
+        }
+    }
+}
+
+// 768
+@include media-breakpoint-down(sm) {
+    .basket {
+        padding: 65px 15px 120px;
+
+        &__products {
+
+            &-content {
+                display: flex;
+                flex-direction: column;
+            }
+
+            &-name {
+                margin-left: 8px;
+            }
+        }
+
+        &__actions {
+            margin-top: 37px;
+            height: 55px;
+
+            display: flex;
+            justify-content: flex-end;
+
+            &-checkout {
+                width: 220px;
+            }
+
+            &-reset {
+                width: 220px;
+                height: 100%;
+                margin-right: 24px;
+            }
+        }
+    }
+}
+
+// 576
+@media screen and (max-width: 576px) {
+    .basket {
+
+        &__products {
+
+            &-image {
+                width: 56px;
+                height: 56px;
+            }
+
+            &-total {
+                margin-left: 5px;
+            }
+        }
+
+        &__actions {
+            margin-top: 32px;
+            height: auto;
+
+            display: flex;
+
+            &-checkout {
+                width: auto;
+                flex: 1;
+                margin-left: 7px;
+            }
+
+            &-reset {
+                width: auto;
+                flex: 1;
+                margin-right: 7px;
+            }
+        }
+    }
+}

@@ -1,0 +1,258 @@
+{% import '../includes/_macro.njk' as macro %}
+{% set catalog = [
+    {
+        name: 'Bitmain Antminer T19 – 84Th',
+        price: '$ 7 150',
+        hit: false,
+        oldPrice: '',
+        image: '/assets/img/product/img1.png',
+        rate: 4,
+        comments: 4,
+        options: {
+        algoritm: 'SHA256',
+        hash: '14,5',
+        bt: '1400 Вт'
+    }
+    },
+    {
+        name: 'Bitmain Antminer T19 – 84Th',
+        price: '$ 7 150',
+        hit: false,
+        oldPrice: '$ 6 150',
+        image: '/assets/img/product/img2.png',
+        rate: 4,
+        comments: 4,
+        options: {
+        algoritm: 'SHA256',
+        hash: '14,5',
+        bt: '1400 Вт'
+    }
+    },
+    {
+        name: 'Bitmain Antminer T19 – 84Th',
+        price: '$ 7 150',
+        hit: true,
+        oldPrice: '',
+        image: '/assets/img/product/img1.png',
+        rate: 4,
+        comments: 4,
+        options: {
+        algoritm: 'SHA256',
+        hash: '14,5',
+        bt: '1400 Вт'
+    }
+    },
+    {
+        name: 'Bitmain Antminer T19 – 84Th',
+        price: '$ 7 150',
+        hit: false,
+        oldPrice: '',
+        image: '/assets/img/product/img2.png',
+        rate: 4,
+        comments: 4,
+        options: {
+        algoritm: 'SHA256',
+        hash: '14,5',
+        bt: '1400 Вт'
+    }
+    },
+    {
+        name: 'Bitmain Antminer T19 – 84Th',
+        price: '$ 7 150',
+        hit: false,
+        oldPrice: '',
+        image: '/assets/img/product/img1.png',
+        rate: 4,
+        comments: 4,
+        options: {
+        algoritm: 'SHA256',
+        hash: '14,5',
+        bt: '1400 Вт'
+    }
+    },
+    {
+        name: 'Bitmain Antminer T19 – 84Th',
+        price: '$ 7 150',
+        hit: false,
+        oldPrice: '$ 6 150',
+        image: '/assets/img/product/img2.png',
+        rate: 4,
+        comments: 4,
+        options: {
+        algoritm: 'SHA256',
+        hash: '14,5',
+        bt: '1400 Вт'
+    }
+    },
+    {
+        name: 'Bitmain Antminer T19 – 84Th',
+        price: '$ 7 150',
+        hit: true,
+        oldPrice: '',
+        image: '/assets/img/product/img1.png',
+        rate: 4,
+        comments: 4,
+        options: {
+        algoritm: 'SHA256',
+        hash: '14,5',
+        bt: '1400 Вт'
+    }
+    },
+    {
+        name: 'Bitmain Antminer T19 – 84Th',
+        price: '$ 7 150',
+        hit: false,
+        oldPrice: '',
+        image: '/assets/img/product/img2.png',
+        rate: 4,
+        comments: 4,
+        options: {
+        algoritm: 'SHA256',
+        hash: '14,5',
+        bt: '1400 Вт'
+    }
+    },    {
+        name: 'Bitmain Antminer T19 – 84Th',
+        price: '$ 7 150',
+        hit: false,
+        oldPrice: '',
+        image: '/assets/img/product/img1.png',
+        rate: 4,
+        comments: 4,
+        options: {
+            algoritm: 'SHA256',
+            hash: '14,5',
+            bt: '1400 Вт'
+        }
+    },
+    {
+        name: 'Bitmain Antminer T19 – 84Th',
+        price: '$ 7 150',
+        hit: false,
+        oldPrice: '$ 6 150',
+        image: '/assets/img/product/img2.png',
+        rate: 4,
+        comments: 4,
+        options: {
+        algoritm: 'SHA256',
+        hash: '14,5',
+        bt: '1400 Вт'
+    }
+    },
+    {
+        name: 'Bitmain Antminer T19 – 84Th',
+        price: '$ 7 150',
+        hit: true,
+        oldPrice: '',
+        image: '/assets/img/product/img1.png',
+        rate: 4,
+        comments: 4,
+        options: {
+        algoritm: 'SHA256',
+        hash: '14,5',
+        bt: '1400 Вт'
+    }
+    },
+    {
+        name: 'Bitmain Antminer T19 – 84Th',
+        price: '$ 7 150',
+        hit: false,
+        oldPrice: '',
+        image: '/assets/img/product/img2.png',
+        rate: 4,
+        comments: 4,
+        options: {
+        algoritm: 'SHA256',
+        hash: '14,5',
+        bt: '1400 Вт'
+    }
+    }
+] %}
+
+<section id="catalog" class="catalog">
+    <div class="catalog__container">
+        <header class="catalog__header">
+            <div class="catalog__header-filter btn--gradient">
+                <img src="/assets/img/filters.svg" alt="" class="catalog__header-icon">
+
+                <div class="catalog__header-title">Фильтры</div>
+            </div>
+
+            <nav class="catalog__pagination">
+                <ul class="pagination">
+                    <li class="prev page-item disabled">
+                        <a class="page-link" href="#">
+                            <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11 5H1M1 5L5 1M1 5L5 9" stroke="white"/>
+                            </svg>
+                        </a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item dots">...</li>
+                    <li class="page-item"><a class="page-link" href="#">7</a></li>
+                    <li class="next page-item">
+                        <a class="page-link" href="#">
+                            <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 5H10M10 5L6 1M10 5L6 9" stroke="white"/>
+                            </svg>
+                        </a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="catalog__body">
+            <aside class="catalog__body-sidebar">
+                <div class="catalog__body-header">
+                    <div class="catalog__body-title">
+                        <img src="/assets/img/filters.svg" alt="">
+                        Фильтры
+                    </div>
+                    <div class="catalog__body-close">
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet dolor fugit officia? Debitis dicta
+                repellendus voluptatibus. Cupiditate doloremque, et itaque nihil non numquam placeat quasi! Impedit
+                labore laboriosam necessitatibus nihil.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet dolor fugit officia? Debitis dicta
+                repellendus voluptatibus. Cupiditate doloremque, et itaque nihil non numquam placeat quasi! Impedit
+                labore laboriosam necessitatibus nihil.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet dolor fugit officia? Debitis dicta
+                repellendus voluptatibus. Cupiditate doloremque, et itaque nihil non numquam placeat quasi! Impedit
+                labore laboriosam necessitatibus nihil.
+            </aside>
+
+            <ul class="catalog__body-list">
+                {% for product in catalog %}
+                    {{ macro.cart(product, 'catalog__body-item') }}
+                {% endfor %}
+            </ul>
+        </div>
+
+        <footer class="catalog__footer">
+            <nav class="catalog__pagination">
+                <ul class="pagination">
+                    <li class="prev page-item disabled">
+                        <a class="page-link" href="#">
+                            <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11 5H1M1 5L5 1M1 5L5 9" stroke="white"/>
+                            </svg>
+                        </a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item dots">...</li>
+                    <li class="page-item"><a class="page-link" href="#">7</a></li>
+                    <li class="next page-item">
+                        <a class="page-link" href="#">
+                            <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 5H10M10 5L6 1M10 5L6 9" stroke="white"/>
+                            </svg>
+                        </a></li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
+</section>

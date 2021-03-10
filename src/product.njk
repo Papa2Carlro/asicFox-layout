@@ -1,0 +1,11 @@
+{% set title = 'Product' %}
+{% extends 'includes/_base.njk' %}
+
+{% block content %}
+    {% include '../src/includes/_loader.njk' %}
+
+    {% include '../src/components/product/home.njk' %}
+    {% include '../src/components/product/info.njk' %}
+    {% include '../src/components/product/tabs.njk' %}
+    {% include '../src/components/product/similar.njk' %}
+{% endblock %}

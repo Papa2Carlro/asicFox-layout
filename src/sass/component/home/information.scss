@@ -1,0 +1,144 @@
+.information {
+    display: flex;
+
+    margin: 0 auto;
+    max-width: 1308px;
+
+    border-left: 1px solid;
+    border-right: 1px solid;
+
+    &__item {
+        flex: 1 0 33.33%;
+
+        display: flex;
+        align-items: center;
+
+        &--text,
+        &--title {
+            font-family: Gilroy, sans-serif;
+            padding: 0 30px;
+        }
+
+        &--title {
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 40px;
+        }
+
+        &--text {
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        & + & {
+            border-left: 1px solid;
+        }
+    }
+}
+
+@include dark {
+    .information {
+        color: $white;
+        border-color: rgba(255, 255, 255, 0.1);
+
+        &__item {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+    }
+}
+
+@include white {
+    .information {
+        color: $black;
+        border-color: rgba(0, 0, 0, 0.16);
+
+        &__item {
+            border-color: rgba(0, 0, 0, 0.16);
+        }
+    }
+}
+
+// 992
+@include media-breakpoint-down(lg) {
+    .information {
+
+        &__item {
+
+            &--title {
+                font-size: 28px;
+                line-height: 34px;
+            }
+
+            &--text,
+            &--title {
+                padding: 0 20px;
+            }
+        }
+    }
+}
+
+// 992
+@include media-breakpoint-down(md) {
+    .information {
+        flex-direction: column;
+        margin: 0 15px;
+
+        &__item {
+            border: none;
+
+            &-image {
+                position: relative;
+                margin-left: auto;
+
+                right: -15px;
+                top: 20px;
+            }
+
+            &--image {
+                order: 0;
+            }
+
+            &--title {
+                font-size: 26px;
+                line-height: 32px;
+
+                margin-bottom: 15px;
+
+                order: 1;
+            }
+
+            &--text {
+                font-size: 16px;
+                line-height: 22px;
+
+                margin-bottom: 55px;
+
+                order: 2;
+            }
+
+            &--text,
+            &--title {
+                padding: 0 15px;
+            }
+        }
+    }
+}
+
+// 768
+@include media-breakpoint-down(md) {
+    .information {
+
+    }
+}
+
+// 576
+@include media-breakpoint-down(sm) {
+    .information {
+
+        &__item {
+            &-image {
+                width: 100%;
+            }
+        }
+    }
+}

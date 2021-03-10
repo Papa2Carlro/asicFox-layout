@@ -1,0 +1,19 @@
+$base-font-size: 14;
+
+@function em($pixels, $context: $base-font-size) {
+    @return #{$pixels/$context}em;
+}
+
+@mixin dark {
+    .wrapper.dark {
+        @content
+    }
+}
+
+@mixin white {
+    .wrapper.white {
+        @content
+    }
+}
+
+@import "~bootstrap/scss/bootstrap";

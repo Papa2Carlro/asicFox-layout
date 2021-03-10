@@ -1,0 +1,360 @@
+.super {
+    display: flex;
+
+    margin: 0 auto;
+    max-width: 1308px;
+    width: 100%;
+
+    border-left: 1px solid;
+    border-right: 1px solid;
+
+    &__item {
+        flex: 1 0 50%;
+
+        display: flex;
+
+        &-list {
+            margin-top: 24px;
+        }
+
+        &-group {
+            display: flex;
+        }
+
+        &-group + &-group {
+            margin-top: 28px;
+        }
+
+        &-info {
+            margin-left: 16px;
+        }
+
+        &-title {
+            font-family: Gilroy, sans-serif;
+
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 22px;
+
+            margin-bottom: 6px;
+        }
+
+        &-link {
+            font-family: Gilroy, sans-serif;
+
+            font-size: 16px;
+            line-height: 22px;
+
+            color: $orange1 !important;
+        }
+
+        & + & {
+            border-left: 1px solid;
+        }
+
+        &--left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            padding: 0 40px 0 70px;
+        }
+    }
+
+    &__card {
+        overflow: hidden;
+        position: relative;
+
+        width: 100%;
+        margin: 32px 0;
+
+        padding: 32px 24px 76px;
+
+        border: 1px solid $orange1;
+
+        &-orange {
+            font-family: Gilroy, sans-serif;
+
+            color: $orange1;
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        &-offer {
+            margin-bottom: 8px;
+        }
+
+        &-title {
+            font-family: Gilroy, sans-serif;
+
+            font-weight: bold;
+            font-size: 32px;
+            line-height: 40px;
+        }
+
+        &-rate {
+            margin: 16px 0 24px;
+        }
+
+        &-stock {
+            margin-top: 24px;
+        }
+
+        &-price {
+            display: flex;
+            align-items: flex-end;
+
+            margin-bottom: 16px;
+
+            &--main {
+                font-family: Gilroy, sans-serif;
+
+                font-weight: 700;
+                font-size: 32px;
+                line-height: 40px;
+
+                color: $orange1;
+            }
+
+            &--old {
+                margin-left: 8px;
+
+                font-family: Gilroy, sans-serif;
+
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 22px;
+                text-decoration-line: line-through;
+
+            }
+        }
+
+        &-buy {
+            width: 270px;
+        }
+
+        &-image {
+            position: absolute;
+
+            right: 0;
+            bottom: 0;
+        }
+    }
+}
+
+@include dark {
+    .super {
+        color: $white;
+        border-color: rgba(255, 255, 255, 0.1);
+
+        &__item {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        &__card {
+
+            &-title {
+                color: $white;
+            }
+
+            &-price {
+
+                &--old {
+                    color: rgba(255, 255, 255, 0.62);
+                }
+            }
+        }
+    }
+}
+@include white {
+    .super {
+        color: $black;
+        border-color: rgba(255, 255, 255, 0.16);
+
+        &__item {
+            border-color: rgba(0, 0, 0, 0.16);
+        }
+
+        &__card {
+
+            &-title {
+                color: $black;
+            }
+
+            &-price {
+
+                &--old {
+                    color: rgba(0, 0, 0, 0.5);
+                }
+            }
+        }
+    }
+}
+
+// 992
+@include media-breakpoint-down(lg) {
+    .super {
+
+        &__item {
+
+            &-list {
+                margin-top: 20px;
+            }
+
+            &-group + &-group {
+                margin-top: 22px;
+            }
+
+            &--left {
+                padding: 0 30px 0 55px;
+            }
+        }
+
+        &__card {
+            margin: 25px 15px;
+            padding: 26px 20px 70px;
+
+            &-title {
+                font-size: 30px;
+                line-height: 38px;
+            }
+
+            &-rate {
+                margin: 14px 0 20px;
+            }
+
+            &-price {
+                &--main {
+                    font-size: 30px;
+                    line-height: 38px;
+                }
+            }
+
+            &-buy {
+                width: 260px;
+            }
+
+            &-image {
+
+                img {
+                    width: 200px;
+                    height: 200px;
+                }
+            }
+        }
+    }
+}
+
+// 992
+@include media-breakpoint-down(md) {
+    .super {
+        flex-direction: column;
+
+        &__item {
+
+            &--left {
+                padding: 0 50px 60px 30px;
+            }
+        }
+
+        &__card {
+            margin: 25px 15px;
+            padding: 26px 20px 70px;
+
+            &-title {
+                font-size: 30px;
+                line-height: 38px;
+            }
+
+            &-rate {
+                margin: 14px 0 20px;
+            }
+
+            &-price {
+                &--main {
+                    font-size: 30px;
+                    line-height: 38px;
+                }
+            }
+
+            &-buy {
+                width: 260px;
+            }
+
+            &-image {
+
+                img {
+                    width: 200px;
+                    height: 200px;
+                }
+            }
+        }
+    }
+}
+
+// 768
+@include media-breakpoint-down(sm) {
+    .super {
+
+        &__card {
+            margin: 20px 15px;
+            padding: 20px 20px 0;
+
+            &-title {
+                font-size: 26px;
+                line-height: 34px;
+            }
+
+            &-rate {
+                margin: 10px 0 15px;
+            }
+
+            &-price {
+                &--main {
+                    font-size: 26px;
+                    line-height: 34px;
+                }
+            }
+
+            &-buy {
+                width: 100%;
+
+                margin-right: 15px;
+            }
+
+            &-image {
+                position: relative;
+                display: flex;
+
+                img {
+                    margin: 0 auto;
+
+                    width: 200px;
+                    height: 200px;
+                }
+            }
+        }
+
+        &__item {
+
+            &-list {
+                margin-top: 0;
+            }
+
+            &-group {
+                margin-top: 15px;
+            }
+
+            &--left {
+                padding: 0 40px 50px 20px;
+            }
+        }
+    }
+}
+
+// 576
+@media screen and (max-width: 576px) {
+    .super {
+        margin: 0 15px;
+    }
+}

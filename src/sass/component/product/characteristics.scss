@@ -1,0 +1,50 @@
+.characteristics {
+
+    &__item {
+        display: flex;
+        align-items: center;
+
+        padding: 8px 32px;
+
+        font-size: 16px;
+        line-height: 22px;
+
+        &-title {
+            font-weight: bold;
+            min-width: 250px;
+        }
+
+        &-value {
+
+            a {
+                color: $orange1 !important;
+            }
+        }
+    }
+}
+
+@include dark {
+    .characteristics {
+        color: $white;
+
+        &__item {
+
+            &:nth-child(odd) {
+                background: rgba(0, 0, 0, .1);
+            }
+        }
+    }
+}
+
+@include white {
+    .characteristics {
+        color: $black;
+
+        &__item {
+
+            &:nth-child(odd) {
+                background: rgba(255, 255, 255, .1);
+            }
+        }
+    }
+}

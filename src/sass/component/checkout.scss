@@ -1,0 +1,349 @@
+.checkout {
+    margin: 0 auto;
+    max-width: 1308px;
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    border-left: 1px solid;
+    border-right: 1px solid;
+
+    &__form {
+        border-right: 1px solid;
+        padding: 64px 32px 100px;
+
+        &-title {
+            font-family: Gilroy, sans-serif;
+
+            font-weight: bold;
+            font-size: 32px;
+            line-height: 40px;
+
+            margin-bottom: 35px;
+        }
+
+        &-group {
+            display: flex;
+            flex-direction: column;
+
+            label {
+                font-family: Gilroy, sans-serif;
+
+                font-weight: bold;
+                font-size: 16px;
+                line-height: 22px;
+
+                b {
+                    opacity: .5;
+                }
+            }
+
+            .input {
+                margin: 24px 0 0;
+            }
+
+            & + & {
+                margin-top: 35px;
+            }
+        }
+
+        &-total {
+            font-family: Gilroy, sans-serif;
+
+            font-weight: bold;
+            font-size: 32px;
+            line-height: 40px;
+
+            margin-top: 32px;
+        }
+
+        &-btn {
+            margin-top: 32px;
+
+            width: 220px;
+            height: 56px;
+        }
+    }
+
+    &__products {
+        padding: 161px 32px 0;
+
+        &-list {
+            border-bottom: 1px solid;
+        }
+
+        &-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 8px 0;
+
+            border-top: 1px solid;
+        }
+
+        &-info {
+            display: flex;
+            align-items: center;
+        }
+
+        &-thumb {
+            width: 64px;
+            height: 64px;
+
+            margin-right: 24px;
+        }
+
+        &-name {
+            font-family: Gilroy, sans-serif;
+
+            font-size: 16px;
+            line-height: 22px;
+
+            margin-right: 25px;
+        }
+
+        &-right {
+            font-family: Gilroy, sans-serif;
+
+            font-size: 16px;
+            line-height: 22px;
+
+            & > p {
+                white-space: nowrap;
+                margin-bottom: 2px;
+            }
+        }
+
+        &-pay {
+            font-family: Gilroy, sans-serif;
+
+            font-size: 16px;
+            line-height: 22px;
+            margin-top: 16px;
+
+            b {
+                font-weight: 700;
+            }
+        }
+    }
+
+    &__products,
+    &__form {
+        flex: 1;
+    }
+}
+
+@include dark {
+    .checkout {
+        color: $white;
+        border-color: rgba(255, 255, 255, 0.1);
+
+        &__form {
+            border-color: rgba(255, 255, 255, 0.1);
+
+            &-total {
+                color: rgba(255, 255, 255, 0.5);
+
+                span {
+                    color: $white;
+                }
+            }
+        }
+
+        &__products {
+
+            &-item,
+            &-list {
+                border-color: rgba(255, 255, 255, 0.1);
+            }
+        }
+    }
+}
+@include white {
+    .checkout {
+        color: $black;
+        border-color: rgba(0, 0, 0, 0.16);
+
+        &__form {
+            border-color: rgba(0, 0, 0, 0.16);
+
+            &-total {
+                color: rgba(0, 0, 0, 0.5);
+
+                span {
+                    color: $black;
+                }
+            }
+        }
+
+        &__products {
+
+            &-item,
+            &-list {
+                border-color: rgba(0, 0, 0, 0.16);
+            }
+        }
+    }
+}
+
+// 1200
+@include media-breakpoint-down(lg) {
+    .checkout {
+
+    }
+}
+
+// 992
+@include media-breakpoint-down(md) {
+    .checkout {
+        width: auto;
+        margin: 0 15px;
+        flex-direction: column;
+
+        &__form {
+            padding: 80px 8px 0;
+
+            &-title {
+                font-size: 26px;
+                line-height: 32px;
+
+                margin-bottom: 30px;
+            }
+
+            &-group {
+                display: flex;
+                flex-direction: column;
+
+                .input {
+                    margin: 16px 0 0;
+                }
+
+                & + & {
+                    margin-top: 40px;
+                }
+            }
+
+            &-total {
+                font-size: 26px;
+                line-height: 32px;
+
+                margin-top: 40px;
+            }
+
+            &-btn {
+                margin-top: 16px;
+
+                width: 220px;
+                height: 56px;
+            }
+        }
+
+        &__products {
+            padding: 40px 8px 56px;
+
+            &-thumb {
+                width: 48px;
+                height: 48px;
+
+                margin-right: 8px;
+            }
+
+            &-right {
+                font-size: 14px;
+                line-height: 18px;
+            }
+        }
+    }
+}
+
+// 768
+@include media-breakpoint-down(sm) {
+    .checkout {
+
+        &__form {
+            border-right: 1px solid;
+            padding: 64px 32px 100px;
+
+            &-title {
+                font-family: Gilroy, sans-serif;
+
+                font-weight: bold;
+                font-size: 32px;
+                line-height: 40px;
+
+                margin-bottom: 35px;
+            }
+
+            &-group {
+                display: flex;
+                flex-direction: column;
+
+                label {
+                    font-family: Gilroy, sans-serif;
+
+                    font-weight: bold;
+                    font-size: 16px;
+                    line-height: 22px;
+
+                    b {
+                        opacity: .5;
+                    }
+                }
+
+                .input {
+                    margin: 24px 0 0;
+                }
+
+                & + & {
+                    margin-top: 35px;
+                }
+            }
+
+            &-total {
+                font-family: Gilroy, sans-serif;
+
+                font-weight: bold;
+                font-size: 32px;
+                line-height: 40px;
+
+                margin-top: 32px;
+            }
+
+            &-btn {
+                margin-top: 32px;
+
+                width: 220px;
+                height: 56px;
+            }
+        }
+
+        &__products {
+            padding: 40px 8px 56px;
+
+            &-thumb {
+                width: 48px;
+                height: 48px;
+
+                margin-right: 8px;
+            }
+
+            &-name {
+                margin-right: 15px;
+            }
+
+            &-right {
+                font-size: 14px;
+                line-height: 18px;
+            }
+        }
+    }
+}
+
+// 576
+@media screen and (max-width: 576px) {
+    .checkout {
+
+    }
+}

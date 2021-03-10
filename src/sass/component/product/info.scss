@@ -1,0 +1,118 @@
+.product-info {
+    transition: .3s 0s;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+
+    &__container {
+        display: flex;
+
+        margin: 0 auto;
+        max-width: 1308px;
+        width: 100%;
+
+        border-left: 1px solid;
+        border-right: 1px solid;
+    }
+
+    &__item {
+        display: flex;
+        align-items: flex-start;
+
+        flex: 1 0 20%;
+        padding: 24px 16px;
+
+        font-size: 16px;
+        line-height: 22px;
+
+        &-icon {
+            margin-right: 10px;
+        }
+
+        &-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        & + & {
+            border-left: 1px solid;
+        }
+    }
+}
+
+@include dark {
+    .product-info {
+        color: $white;
+        background: $dark1;
+        border-color: rgba(255, 255, 255, 0.1);
+
+        &__item,
+        &__container {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+    }
+}
+@include white {
+    .product-info {
+        color: $black;
+        background: $white1;
+        border-color: rgba(0, 0, 0, 0.16);
+
+        &__item,
+        &__container {
+            border-color: rgba(0, 0, 0, 0.16);
+        }
+    }
+}
+
+// 1200
+@include media-breakpoint-down(lg) {
+    .product-info {
+
+        &__container {
+            width: auto;
+            margin: 0 20px;
+        }
+
+        &__item {
+            padding: 22px 10px;
+
+            &-icon {
+                margin-right: 8px;
+            }
+        }
+    }
+}
+
+// 992
+@include media-breakpoint-down(md) {
+    .product-info {
+
+        &__container {
+            margin: 0 15px;
+            flex-direction: column;
+        }
+
+        &__item {
+            padding: 22px 10px;
+
+            & + & {
+                border-top: 1px solid;
+                border-left: none;
+            }
+        }
+    }
+}
+
+// 768
+@include media-breakpoint-down(sm) {
+    .product-info {
+
+    }
+}
+
+// 576
+@media screen and (max-width: 576px) {
+    .product-info {
+
+    }
+}

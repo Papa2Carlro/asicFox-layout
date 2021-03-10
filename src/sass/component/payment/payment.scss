@@ -1,0 +1,354 @@
+.payment-info {
+    $parent: &;
+    font-family: Gilroy, sans-serif;
+    transition: .3s 0s;
+
+    &__container {
+        margin: 0 auto;
+        max-width: 1308px;
+        width: 100%;
+
+        display: flex;
+
+        border-left: 1px solid;
+        border-right: 1px solid;
+    }
+
+    &__item {
+        flex: 1 0 33.33%;
+        overflow: hidden;
+
+        display: flex;
+        align-items: center;
+
+        & + & {
+            border-left: 1px solid;
+        }
+
+        &.orange {
+
+            #{$parent} {
+
+                &__group {
+
+                    &-title {
+                        color: $white;
+                    }
+
+                    p {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+
+    &__body {
+        position: relative;
+        z-index: 1;
+
+        padding: 120px 32px;
+    }
+
+    &__group {
+
+        &-title {
+            font-weight: bold;
+            font-size: 32px;
+            line-height: 40px;
+
+            margin-bottom: 16px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 22px;
+
+            b {
+                font-weight: bold;
+            }
+        }
+
+        p + p {
+            margin-top: 16px;
+        }
+
+        & + & {
+            margin-top: 40px;
+        }
+    }
+
+    &__contact {
+        margin-top: 16px;
+
+        font-size: 16px;
+        line-height: 22px;
+
+        &-header {
+            display: flex;
+            align-items: center;
+
+            margin-bottom: 8px;
+        }
+
+        &-icon {
+            margin-right: 4px;
+        }
+
+        &-title {
+            font-weight: bold;
+        }
+
+        &-value {
+            margin-bottom: 4px;
+        }
+
+        &-text {
+            font-size: 12px;
+            line-height: 16px;
+        }
+    }
+
+    &__list {
+        font-size: 16px;
+        line-height: 22px;
+        border-bottom: 1px solid;
+
+        &-item {
+            padding: 16px 0;
+            border-top: 1px solid;
+        }
+
+        &-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        &-text {
+
+            span {
+                opacity: .6;
+            }
+        }
+    }
+}
+
+@include dark {
+    .payment-info {
+        color: $white;
+        background: $dark1;
+
+        &__item,
+        &__container {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        &__list {
+            border-color: rgba(255, 255, 255, 0.1);
+
+            &-item {
+                border-color: rgba(255, 255, 255, 0.1);
+            }
+        }
+    }
+}
+
+@include white {
+    .payment-info {
+        color: $black;
+        background: $white1;
+
+        &__item,
+        &__container {
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        &__list {
+            border-color: rgba(0, 0, 0, 0.1);
+
+            &-item {
+                border-color: rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+}
+
+// 1200
+@include media-breakpoint-down(lg) {
+    .payment-info {
+        $parent: &;
+
+        &__container {
+            margin: 0 20px;
+            width: auto;
+        }
+
+        &__body {
+            padding: 80px 24px;
+        }
+
+        &__group {
+
+            &-title {
+                font-size: 32px;
+                line-height: 40px;
+
+                margin-bottom: 16px;
+            }
+
+            p + p {
+                margin-top: 16px;
+            }
+
+            & + & {
+                margin-top: 40px;
+            }
+        }
+
+        &__contact {
+            margin-top: 16px;
+
+            font-size: 16px;
+            line-height: 22px;
+
+            &-header {
+                display: flex;
+                align-items: center;
+
+                margin-bottom: 8px;
+            }
+
+            &-icon {
+                margin-right: 4px;
+            }
+
+            &-title {
+                font-weight: bold;
+            }
+
+            &-value {
+                margin-bottom: 4px;
+            }
+
+            &-text {
+                font-size: 12px;
+                line-height: 16px;
+            }
+        }
+
+        &__list {
+            font-size: 16px;
+            line-height: 22px;
+            border-bottom: 1px solid;
+
+            &-item {
+                padding: 16px 0;
+                border-top: 1px solid;
+            }
+
+            &-title {
+                font-weight: bold;
+                margin-bottom: 8px;
+            }
+
+            &-text {
+
+                span {
+                    opacity: .6;
+                }
+            }
+        }
+    }
+}
+
+// 992
+@include media-breakpoint-down(md) {
+    .payment-info {
+        $parent: &;
+
+        &__container {
+            margin: 0 15px;
+            flex-direction: column;
+        }
+
+        &__body {
+            padding: 16px 14px;
+        }
+
+        &__item {
+            border-left: none;
+
+            &:first-child {
+                margin-top: 50px;
+                margin-bottom: 16px;
+            }
+
+            &:last-child {
+                margin-top: 30px;
+            }
+
+            &.orange {
+
+                #{$parent} {
+
+                    &__body {
+                        padding: 60px 14px 160px;
+                    }
+                }
+            }
+        }
+
+        &__group {
+
+            &-title {
+                font-size: 26px;
+                line-height: 32px;
+
+                margin-bottom: 8px;
+            }
+
+            p + p {
+                margin-top: 8px;
+            }
+
+            & + & {
+                margin-top: 24px;
+            }
+        }
+    }
+}
+
+// 768
+@include media-breakpoint-down(sm) {
+    .payment-info {
+        $parent: &;
+
+        &__container {
+            margin: 0 10px;
+        }
+
+        &__body {
+            padding: 16px 8px;
+        }
+
+        &__item {
+
+            &.orange {
+
+                #{$parent} {
+
+                    &__body {
+                        padding: 60px 8px 160px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 576
+@media screen and (max-width: 576px) {
+    .payment-info {
+
+    }
+}

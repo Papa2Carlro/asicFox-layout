@@ -1,0 +1,226 @@
+.trade-contact {
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__info {
+        color: $white;
+
+        font-size: 16px;
+        line-height: 22px;
+        padding: 120px 32px 96px;
+
+        &-list {
+            margin-top: 18px;
+            display: grid;
+
+            grid-row-gap: 25px;
+            grid-column-gap: 50px;
+            grid-template-columns: repeat(2, auto);
+
+            &--200 {
+                grid-template-columns: repeat(2, 200px);
+            }
+        }
+
+        &-header {
+            display: flex;
+            align-items: center;
+
+            margin-bottom: 8px;
+        }
+
+        &-title {
+            font-weight: bold;
+        }
+
+        &-link {
+            margin-left: 8px;
+            text-decoration-line: underline;
+        }
+
+        &-icon {
+            margin-right: 4px;
+        }
+
+        &-value {
+            margin-bottom: 4px;
+
+            p + p {
+                margin-top: 2px;
+            }
+        }
+
+        &-text {
+            opacity: .7;
+            font-size: 12px;
+            line-height: 16px;
+        }
+
+        &-socList {
+            margin-bottom: 8px;
+        }
+
+        &-soc + &-soc {
+            margin-left: 4px;
+        }
+
+        &-phone {
+            height: 48px;
+            display: flex;
+            align-items: center;
+
+            margin-top: 44px;
+
+            input {
+                width: 241px;
+                height: 100%;
+
+                border: 1px solid rgba(255, 255, 255, 0.7);
+                box-sizing: border-box;
+
+                &::placeholder {
+                    color: $white;
+                }
+            }
+
+            button {
+                width: 115px;
+                height: 100%;
+                border: none;
+            }
+        }
+    }
+
+    &__image {
+        padding: 40px 0;
+
+        img {
+            height: 100%;
+        }
+    }
+}
+
+@include dark {
+    .trade-contact {
+
+    }
+}
+
+@include white {
+    .trade-contact {
+
+    }
+}
+
+// 1200
+@include media-breakpoint-down(lg) {
+    .trade-contact {
+
+        &__info {
+            padding: 100px 26px 70px;
+        }
+
+        &__image {
+            width: 450px;
+            padding: 30px 0;
+        }
+    }
+}
+
+// 992
+@include media-breakpoint-down(md) {
+    .trade-contact {
+
+        &__info {
+            padding: 50px 16px 30px;
+
+            &-list {
+                margin-top: 10px;
+            }
+
+            &-header {
+                margin-bottom: 4px;
+            }
+
+            &-link {
+                margin-left: 6px;
+            }
+
+            &-socList {
+                margin-bottom: 4px;
+            }
+
+            &-phone {
+                height: 40px;
+                margin-top: 20px;
+
+                input {
+                    width: 241px;
+                    height: 100%;
+
+                    border: 1px solid rgba(255, 255, 255, 0.7);
+                    box-sizing: border-box;
+
+                    &::placeholder {
+                        color: $white;
+                    }
+                }
+
+                button {
+                    width: 115px;
+                    height: 100%;
+                    border: none;
+                }
+            }
+        }
+
+        &__image {
+            width: calc(100% + 30px);
+            height: 400px;
+            padding: 0;
+            margin: 0 -15px;
+
+            img {
+                object-fit: cover;
+                width: 100%;
+            }
+        }
+    }
+}
+
+// 768
+@include media-breakpoint-down(sm) {
+    .trade-contact {
+
+        &__info {
+            padding: 35px 12px 25px;
+
+            &-phone {
+
+                input {
+                    width: 220px;
+                }
+
+                button {
+                    width: 110px;
+                }
+            }
+        }
+    }
+}
+
+// 576
+@media screen and (max-width: 576px) {
+    .trade-contact {
+
+        &__info {
+
+            &-list {
+                grid-template-columns: repeat(1, 100%);
+            }
+        }
+    }
+}

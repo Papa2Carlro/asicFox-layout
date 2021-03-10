@@ -1,0 +1,14 @@
+{% set title = 'About' %}
+{% extends 'includes/_base.njk' %}
+
+{% block content %}
+    {% include '../src/includes/_loader.njk' %}
+
+    {% include '../src/components/about/home.njk' %}
+    <div class="about">
+        <div class="about__container">
+            {% include '../src/components/about/target.njk' %}
+            {% include '../src/components/about/info.njk' %}
+        </div>
+    </div>
+{% endblock %}

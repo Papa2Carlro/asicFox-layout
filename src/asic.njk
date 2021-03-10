@@ -1,0 +1,12 @@
+{% set title = 'Asic' %}
+{% extends 'includes/_base.njk' %}
+
+{% block content %}
+    {% include '../src/includes/_loader.njk' %}
+
+    {% include '../src/components/asic/home.njk' %}
+    {% include '../src/components/asic/section.njk' %}
+    {% include '../src/components/products.njk' %}
+    {% include '../src/components/asic/info.njk' %}
+    {% include '../src/components/asic/contact.njk' %}
+{% endblock %}

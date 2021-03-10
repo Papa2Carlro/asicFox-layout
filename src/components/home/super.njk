@@ -1,0 +1,71 @@
+{% import '../../includes/_macro.njk' as macro %}
+
+<section class="super">
+    <div class="super__item">
+        <div class="super__card">
+            <div class="super__card-offer super__card-orange">Супер предложение</div>
+
+            <a href="" class="super__card-title">Bitmain Antminer T19 – 84Th</a>
+
+            <div class="super__card-rate rate">
+                <div class="rate__body">
+                    <div class="rate__star active"></div>
+                    <div class="rate__star active"></div>
+                    <div class="rate__star active"></div>
+                    <div class="rate__star active"></div>
+                    <div class="rate__star"></div>
+                </div>
+
+                <div class="rate__comment">4</div>
+            </div>
+
+            <div class="super__card-price">
+                <div class="super__card-price--main">$ 7 300</div>
+
+                <div class="super__card-price--old">$ 7 300</div>
+            </div>
+
+            {{ macro.btnBuy('super__card-buy') }}
+
+            <div class="super__card-stock super__card-orange">Акция закончится через: 3 дней</div>
+            
+            <div class="super__card-image"><img src="/assets/img/image/img1.png" alt=""></div>
+        </div>
+    </div>
+
+    <div class="super__item super__item--left">
+        <div class="super__card-title">Мы сделаем ваш майнинг прибыльным</div>
+
+        <ul class="super__item-list">
+            <li class="super__item-group">
+                <img src="/assets/img/super/news.svg" alt="" class="super__item-icon">
+
+                <div class="super__item-info">
+                    <div class="super__item-title">Новости</div>
+
+                    <a href="" class="super__item-link">Узнать первым</a>
+                </div>
+            </li>
+
+            <li class="super__item-group">
+                <img src="/assets/img/super/chat.svg" alt="" class="super__item-icon">
+
+                <div class="super__item-info">
+                    <div class="super__item-title">Наш чат</div>
+
+                    <a href="" class="super__item-link">Обсудить</a>
+                </div>
+            </li>
+
+            <li class="super__item-group">
+                <img src="/assets/img/super/bot.svg" alt="" class="super__item-icon">
+
+                <div class="super__item-info">
+                    <div class="super__item-title">Прайс/Кеш-бот</div>
+
+                    <a href="" class="super__item-link">Перейти</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>

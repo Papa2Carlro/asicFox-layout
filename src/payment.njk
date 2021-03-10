@@ -1,0 +1,9 @@
+{% set title = 'Payment' %}
+{% extends 'includes/_base.njk' %}
+
+{% block content %}
+    {% include '../src/includes/_loader.njk' %}
+
+    {% include '../src/components/payment/home.njk' %}
+    {% include '../src/components/payment/info.njk' %}
+{% endblock %}

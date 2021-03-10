@@ -1,0 +1,226 @@
+.cart {
+    $cart: &;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    transition: .3s 0s;
+
+    &__mark {
+        position: absolute;
+
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+
+        width: 60px;
+        height: 25px;
+
+        color: $white;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 91.9%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+
+        background: linear-gradient(135deg, #FF4E16 0%, #FF5A13 45.83%, #FFB90F 100%);
+    }
+
+    &__image {
+        transition: .3s 0s;
+        margin: 16px auto;
+        width: 100%;
+    }
+
+    &__info {
+        margin: 0 16px;
+        font-family: Gilroy, sans-serif;
+
+        &-title {
+            font-size: 16px;
+            line-height: 22px;
+            margin-bottom: 4px;
+
+            transition: .3s 0s;
+
+            &:hover {
+                color: $orange1 !important;
+            }
+        }
+
+        &-rate {
+            overflow: hidden;
+            margin-bottom: 8px;
+            height: 0;
+
+            transition: .3s 0s;
+
+            .rate__star {
+                width: 16px;
+                height: 16px;
+
+                background-size: 100% 100%;
+            }
+        }
+
+        &-price {
+            display: flex;
+            align-items: flex-end;
+
+            margin-bottom: 8px;
+
+            p {
+                font-weight: bold;
+                font-size: 16px;
+                line-height: 22px;
+            }
+
+            .oldPrice {
+                margin-left: 5px;
+
+                font-size: 12px;
+                line-height: 16px;
+
+                text-decoration-line: line-through;
+            }
+        }
+
+        &-list {
+            margin-bottom: 16px;
+        }
+
+        &-value {
+            font-size: 12px;
+            line-height: 16px;
+        }
+
+        &-value + &-value {
+            margin-top: 8px;
+        }
+    }
+
+    &__action {
+        width: 100%;
+        position: absolute;
+
+        z-index: 2;
+        left: 0;
+
+        opacity: 0;
+        visibility: hidden;
+        bottom: 0;
+
+        transition: .3s 0s;
+    }
+
+    &:hover {
+        background: $blue3;
+
+        #{$cart} {
+            &__image {
+                margin-top: 0;
+            }
+
+            &__info {
+
+                &-rate {
+                    height: 16px;
+                }
+            }
+
+            &__action {
+                visibility: visible;
+                opacity: 1;
+                bottom: -42px;
+            }
+        }
+    }
+}
+
+@include dark {
+    .cart {
+
+        &:hover {
+            background: $blue3;
+        }
+    }
+}
+@include white {
+    .cart {
+
+        &:hover {
+            background: $white;
+            box-shadow: 0 6px 60px -24px rgba(0, 0, 0, 0.75);
+        }
+    }
+}
+
+// 992
+@include media-breakpoint-down(md) {
+    .cart {
+        $cart: &;
+        border: 1px solid;
+
+        &__info {
+            margin: 0 16px;
+
+            &-rate {
+                display: none;
+            }
+
+            &-list {
+                display: none;
+            }
+        }
+
+        &__action {
+            position: relative;
+
+            opacity: 1;
+            visibility: visible;
+            bottom: 0;
+            margin: 5px 0 15px;
+            padding: 0 10px;
+        }
+
+        &:hover {
+
+            #{$cart} {
+                &__image {
+                    margin-top: 16px;
+                }
+
+                &__info {
+
+                    &-rate {
+                        height: 16px;
+                    }
+                }
+
+                &__action {
+                    visibility: visible;
+                    opacity: 1;
+                    bottom: 0;
+                }
+            }
+        }
+    }
+
+    @include dark {
+        .cart {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+    }
+
+    @include white {
+        .cart {
+            border-color: rgba(255, 255, 255, 0.16);
+        }
+    }
+}

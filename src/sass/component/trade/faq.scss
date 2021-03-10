@@ -1,0 +1,196 @@
+.trade-faq {
+    margin: 0 auto;
+    max-width: 1308px;
+    width: 100%;
+
+    display: flex;
+
+    border-left: 1px solid;
+    border-right: 1px solid;
+
+    &__item {
+        flex: 1 0 50%;
+
+        & + & {
+            border-left: 1px solid;
+        }
+
+        &--left {
+            padding: 94px 32px 96px;
+        }
+
+        &--right {
+            padding: 150px 32px 0;
+        }
+    }
+
+    &__title {
+        font-family: Gilroy, sans-serif;
+
+        font-weight: bold;
+        font-size: 26px;
+        line-height: 32px;
+
+        margin-bottom: 24px;
+    }
+
+    &__list {
+        border-top: 1px solid;
+        border-bottom: 1px solid;
+
+        &-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        &-item {
+            font-family: Gilroy, sans-serif;
+            padding: 16px 0;
+            font-size: 16px;
+            line-height: 22px;
+
+            & + & {
+                border-top: 1px solid;
+            }
+        }
+    }
+}
+
+@include dark {
+    .trade-faq {
+        color: $white;
+        border-color: rgba(255, 255, 255, 0.1);
+
+        &__item {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        &__list {
+            border-color: rgba(255, 255, 255, 0.1);
+
+            &-item {
+                border-color: rgba(255, 255, 255, 0.1);
+            }
+        }
+    }
+}
+@include white {
+    .trade-faq {
+        color: $black;
+        border-color: rgba(0, 0, 0, 0.16);
+
+        &__item {
+            border-color: rgba(0, 0, 0, 0.16);
+        }
+
+        &__list {
+            border-color: rgba(0, 0, 0, 0.16);
+
+            &-item {
+                border-color: rgba(0, 0, 0, 0.16);
+            }
+        }
+    }
+}
+
+// 1200
+@include media-breakpoint-down(lg) {
+    .trade-faq {
+
+    }
+}
+
+// 992
+@include media-breakpoint-down(md) {
+    .trade-faq {
+        $parent: &;
+        margin: 0 15px;
+        width: auto;
+
+        flex-direction: column;
+
+        &__item {
+            border: none;
+
+            &--left {
+                padding: 70px 24px 0;
+            }
+
+            &--right {
+                padding: 0 24px 90px;
+
+                #{$parent} {
+
+                    &__list {
+                        border-top: none;
+                    }
+                }
+            }
+        }
+
+        &__title {
+            margin-bottom: 20px;
+        }
+
+        &__list {
+
+            &-title {
+                margin-bottom: 6px;
+            }
+
+            &-item {
+                padding: 12px 0;
+            }
+        }
+    }
+}
+
+// 768
+@include media-breakpoint-down(sm) {
+    .trade-faq {
+        margin: 0 10px;
+
+        &__item {
+
+            &--left {
+                padding: 50px 15px 0;
+            }
+
+            &--right {
+                padding: 0 15px 70px;
+            }
+        }
+
+        &__title {
+            margin-bottom: 16px;
+        }
+
+        &__list {
+
+            &-title {
+                margin-bottom: 4px;
+            }
+
+            &-item {
+                padding: 10px 0;
+            }
+        }
+    }
+}
+
+// 576
+@media screen and (max-width: 576px) {
+    .trade-faq {
+
+        &__item {
+
+            &--left {
+                padding: 40px 8px 0;
+            }
+
+            &--right {
+                padding: 0 8px 55px;
+            }
+        }
+    }
+}

@@ -1,0 +1,176 @@
+{% import '../../includes/_macro.njk' as macro %}
+{% set breadcrumbs = [
+    {
+        label: 'Главная'
+    },
+    {
+        label: 'Asic майнеры'
+    },
+    {
+        label: 'Новые асики'
+    }
+] %}
+
+
+<section id="product" class="product-home">
+    {{ macro.breadcrumbs(breadcrumbs) }}
+
+    <div class="product-home__info">
+        {{ macro.breadcrumbs(breadcrumbs) }}
+
+        <h1 class="product-home__info-name">Bitmain Antminer T19 – 84Th</h1>
+
+        <div class="product-home__info-rate rate rate--empty">
+            <div class="rate__body">
+                <div class="rate__star active"></div>
+                <div class="rate__star active"></div>
+                <div class="rate__star active"></div>
+                <div class="rate__star active"></div>
+                <div class="rate__star"></div>
+            </div>
+
+            <div class="rate__comment">4</div>
+        </div>
+
+        <div class="product-home__info-line">
+            <div class="product-home__info-catalog">Bitmain</div>
+
+            <div class="product-home__info-availability">
+                <b>Наличие:</b> <span class="not-available">Нет в наличии</span>
+            </div>
+        </div>
+
+        <ul class="product-home__characteristics">
+            <li class="product-home__characteristics-item">
+                <div class="product-home__characteristics-title">Алгоритм:</div>
+                <div class="product-home__characteristics-value">SHA 256</div>
+            </li>
+
+            <li class="product-home__characteristics-item">
+                <div class="product-home__characteristics-title">Хешрейт:</div>
+                <div class="product-home__characteristics-value">84 TH/s</div>
+            </li>
+
+            <li class="product-home__characteristics-item">
+                <div class="product-home__characteristics-title">Энергопотребление:</div>
+                <div class="product-home__characteristics-value">3150 Вт</div>
+            </li>
+
+            <li class="product-home__characteristics-item">
+                <div class="product-home__characteristics-title">Наличие режима экономии энергии:</div>
+                <div class="product-home__characteristics-value">нет</div>
+            </li>
+
+            <li class="product-home__characteristics-item">
+                <div class="product-home__characteristics-title">Вес:</div>
+                <div class="product-home__characteristics-value">16 кг</div>
+            </li>
+
+            <li class="product-home__characteristics-item">
+                <div class="product-home__characteristics-title">Размеры:</div>
+                <div class="product-home__characteristics-value">40 х 19.5 х 29 см</div>
+            </li>
+        </ul>
+
+        <div class="product-home__terahash">
+            <div class="product-home__terahash-body">
+                <p>Версии терахеша:</p>
+
+                <ul class="product-home__terahash-list">
+                    <li class="product-home__terahash-item isThis">
+                        <div class="product-home__terahash-title">Antminer S17 54 Th</div>
+
+                        <div class="product-home__terahash-value">Вы сейчас тут</div>
+                    </li>
+
+                    <li class="product-home__terahash-item">
+                        <div class="product-home__terahash-title">Antminer S17 67 Th</div>
+
+                        <a href="" class="product-home__terahash-value">Перейти</a>
+                    </li>
+
+                    <li class="product-home__terahash-item">
+                        <div class="product-home__terahash-title">Antminer S17 80 Th</div>
+
+                        <a href="" class="product-home__terahash-value">Перейти</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="as-tooltip">
+                <div class="as-tooltip__icon">?</div>
+
+                <div class="as-tooltip__body">
+                    Lorem ipsum dolor sit amet.
+                </div>
+            </div>        <div class="product-home__store">
+                <div class="product-home__store-body">
+                    <div class="product-home__store-title">Выберите склад:</div>
+
+                    <ul class="product-home__store-list">
+                        <li class="product-home__store-item">Китай</li>
+                        <li class="product-home__store-item active">Украина</li>
+                    </ul>
+                </div>
+
+                <div class="as-tooltip">
+                    <div class="as-tooltip__icon">?</div>
+
+                    <div class="as-tooltip__body">
+                        Lorem ipsum dolor sit amet.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <form id="product_form" action="">
+
+        </form>
+
+        <input min="1" value="1" type="number" class="product-home__info-input input input--p16">
+
+        <div class="product-home__info-price">$ 7 300</div>
+
+        <div class="product-home__buy">
+            <div class="product-home__buy-btn btn--gradient">В корзину</div>
+
+            <div class="product-home__buy-one">
+                <label for="phone">Купить в один клик</label>
+
+                <div class="product-home__buy-input">
+                    <input type="text" id="phone" placeholder="Номер телефона"
+                           class="product-home__buy-body input input--p16 input--h48">
+
+                    <div class="product-home__buy-oneclick btn--empty btn--h48">Купить</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-home__image">
+        <div class="product-home__image-body">
+            <img src="/assets/img/product/img1.png" alt="">
+        </div>
+
+        <div data-count="6" class="product-home__image-thumb">
+            <div id="left" class="product-home__image-arr">
+                <img src="/assets/img/product/icon/left.svg" alt="">
+            </div>
+            <div class="product-home__image-bodylist">
+                <ul class="product-home__image-list">
+                    <li data-pos="1" class="product-home__image-item active"><img src="/assets/img/product/img1.png" alt=""></li>
+                    <li data-pos="2" class="product-home__image-item"><img src="/assets/img/product/img2.png" alt=""></li>
+                    <li data-pos="3" class="product-home__image-item"><img src="/assets/img/product/img1.png" alt=""></li>
+                    <li data-pos="4" class="product-home__image-item"><img src="/assets/img/product/img2.png" alt=""></li>
+                    <li data-pos="5" class="product-home__image-item"><img src="/assets/img/product/img1.png" alt=""></li>
+                    <li data-pos="6" class="product-home__image-item"><img src="/assets/img/product/img2.png" alt=""></li>
+                </ul>
+            </div>
+            <div id="right" class="product-home__image-arr">
+                <img src="/assets/img/product/icon/right.svg" alt="">
+            </div>
+        </div>
+    </div>
+</section>

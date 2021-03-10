@@ -1,0 +1,43 @@
+.stock {
+
+}
+
+@include dark {
+    .stock {
+
+    }
+}
+
+@include white {
+    .stock {
+
+    }
+}
+
+// 992
+@include media-breakpoint-down(lg) {
+    .stock {
+
+    }
+}
+
+// 992
+@include media-breakpoint-down(md) {
+    .stock {
+
+    }
+}
+
+// 768
+@include media-breakpoint-down(sm) {
+    .stock {
+
+    }
+}
+
+// 576
+@media screen and (max-width: 576px) {
+    .stock {
+
+    }
+}
